@@ -1,0 +1,698 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Grand Opening Mula Bali</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: undangan satu halaman, sampul berpintu, foto penuh, bagian malam (gelap, lampu bambu) berselang dengan bagian kertas krem; bingkai jendela oval seperti jendela villa; menu di bawah. */
+:root{
+  --night:#16100b;        /* malam di antara bambu */
+  --night-2:#211710;
+  --bamboo:#e3b46c;       /* cahaya lampu bambu */
+  --bamboo-2:#c58b44;
+  --terra:#b9603d;        /* terakota logo */
+  --rice:#a6c665;         /* sawah terasering */
+  --cream:#f4e8d4;
+  --cream-dim:#c8b597;
+  --paper:#f3e8d6;        /* bagian terang */
+  --ink:#2a1c11;
+  --ink-soft:#6c5440;
+  --line:rgba(227,180,108,.28);
+  --line-ink:rgba(185,96,61,.25);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Jost","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+html{background:var(--night);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html.locked,html.locked body{overflow:hidden}
+body{background:var(--night);color:var(--cream);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.65}
+.pad{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto}
+section{position:relative}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--bamboo)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+h2{font-size:clamp(40px,10vw,64px);line-height:1.02;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--bamboo)}
+.lede{font-family:var(--display);font-size:clamp(19px,4.8vw,23px);line-height:1.5;font-weight:300}
+.center{text-align:center}
+
+/* kipas bambu: motif pagar villa */
+.fan{display:block;width:120px;height:62px;margin:14px auto;color:var(--bamboo)}
+.light .fan{color:var(--terra)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 26px;border-radius:999px;border:1px solid var(--bamboo);background:transparent;color:var(--cream);font:500 15px/1 var(--body);letter-spacing:.08em;text-decoration:none;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.btn:hover{background:rgba(227,180,108,.14);transform:translateY(-1px)}
+.btn.fill{background:linear-gradient(180deg,#ecc07c,var(--bamboo-2));color:#1d130b;border-color:transparent;box-shadow:0 8px 24px rgba(197,139,68,.3)}
+.btn.fill:hover{background:linear-gradient(180deg,#f2c98a,#b97f3b)}
+.btn svg{width:17px;height:17px;flex:none}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--bamboo);outline-offset:3px}
+.light .btn{color:var(--ink);border-color:var(--terra)}
+.light .btn:hover{background:rgba(185,96,61,.1)}
+.next{display:inline-flex;align-items:center;gap:7px;margin-top:22px;color:var(--bamboo);font-weight:500;font-size:15px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid transparent;transition:gap .25s,border-color .25s}
+.next:hover{gap:11px;border-bottom-color:currentColor}
+.next svg{width:15px;height:15px}
+.light .next{color:var(--terra)}
+
+/* bagian terang */
+.light{background:var(--paper);color:var(--ink)}
+.light .eyebrow{color:var(--terra)}
+.light h2 em{color:var(--terra)}
+
+/* jendela oval */
+.egg{border-radius:50% 50% 46% 46% / 58% 58% 42% 42%;overflow:hidden;position:relative}
+.egg img{width:100%;height:100%;object-fit:cover;display:block}
+.egg-frame{padding:10px;border-radius:50% 50% 46% 46% / 58% 58% 42% 42%;background:linear-gradient(140deg,#f0c886,#9b6a34 55%,#e2b46c);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+
+/* ---------- SAMPUL ---------- */
+#cover{position:fixed;inset:0;z-index:60;overflow:hidden;background:var(--night)}
+.door{position:absolute;top:0;bottom:0;width:50.5%;overflow:hidden;transition:transform 1.4s cubic-bezier(.7,0,.25,1) .35s}
+.door.l{left:0}.door.r{right:0}
+.door-img{position:absolute;top:0;bottom:0;width:100vw;background:radial-gradient(ellipse at 50% 42%,rgba(22,16,11,.25),rgba(22,16,11,.86) 70%),url(p4.jpg) center 60%/cover}
+.door.l .door-img{left:0}.door.r .door-img{right:0}
+.door.l::after,.door.r::after{content:"";position:absolute;top:0;bottom:0;width:2px;background:linear-gradient(transparent,var(--bamboo),transparent);opacity:.5}
+.door.l::after{right:0}.door.r::after{left:0}
+.cover-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.4vh,22px);text-align:center;box-sizing:border-box;padding:calc(24px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(26px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));transition:opacity .45s,transform .45s}
+.cover-egg{width:min(46vw,210px,26vh);aspect-ratio:3/4}
+.cover-egg .egg{width:100%;height:100%}
+.cover-title{font-family:var(--display);font-size:clamp(44px,12vw,78px);line-height:.95;font-weight:300}
+.cover-title i{display:block;font-size:.5em;color:var(--bamboo);margin-top:8px}
+.guest{font-size:14px;color:var(--cream-dim)}
+.guest strong{display:block;font-family:var(--display);font-weight:400;font-size:23px;color:var(--cream);margin-top:2px}
+#cover.opening .cover-in{opacity:0;transform:scale(.97)}
+#cover.opening .door.l{transform:translateX(-101%)}
+#cover.opening .door.r{transform:translateX(101%)}
+@media (prefers-reduced-motion:no-preference){
+  .cover-in>*{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+  .cover-in>*:nth-child(2){animation-delay:.12s}.cover-in>*:nth-child(3){animation-delay:.24s}.cover-in>*:nth-child(4){animation-delay:.36s}.cover-in>*:nth-child(5){animation-delay:.48s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+  #openBtn{animation:rise 1.1s .6s both,glow 2.6s ease-in-out 1.8s infinite}
+  @keyframes glow{50%{box-shadow:0 8px 24px rgba(197,139,68,.3),0 0 0 9px rgba(227,180,108,.14)}}
+}
+@media (prefers-reduced-motion:reduce){.door,.cover-in{transition:none}}
+
+/* ---------- HERO ---------- */
+.hero{min-height:min(100svh,940px);display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,16,11,.55) 0%,rgba(22,16,11,0) 22%,rgba(22,16,11,.35) 45%,rgba(22,16,11,.86) 68%,var(--night) 100%),url(p1.jpg) center 30%/cover}
+@media (prefers-reduced-motion:no-preference){.hero-bg{animation:zoom 26s ease-in-out infinite alternate}@keyframes zoom{to{transform:scale(1.07)}}}
+.hero-top{position:absolute;top:calc(22px + env(safe-area-inset-top,0px));left:0;right:0;text-align:center;z-index:2}
+.brand{font-family:var(--display);font-size:15px;letter-spacing:.42em;text-transform:uppercase;color:var(--cream)}
+.hero-in{position:relative;z-index:2;width:100%;padding-block:0 92px}
+.hero h1{font-size:clamp(58px,17vw,140px);line-height:.88;font-weight:300;letter-spacing:-.02em}
+.hero h1 i{display:block;font-size:.48em;color:var(--bamboo);letter-spacing:0;margin-top:10px}
+.hero .lede{max-width:28ch;margin:18px 0 0;color:var(--cream)}
+.strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.strip a,.strip span{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(22,16,11,.45);backdrop-filter:blur(6px);color:var(--cream);font-size:14px;letter-spacing:.06em;text-decoration:none}
+.strip a:hover{border-color:var(--bamboo)}
+.strip svg{width:15px;height:15px;color:var(--bamboo)}
+
+/* ---------- SAMBUTAN ---------- */
+.intro{padding-block:70px 80px}
+.intro-grid{display:grid;gap:40px;align-items:center}
+.intro .lede{max-width:34ch;margin:0 auto}
+.intro p{max-width:46ch;margin:16px auto 0;color:var(--cream-dim)}
+.intro-egg{width:min(78%,360px);aspect-ratio:3/4;margin:0 auto}
+.intro-egg .egg{height:100%}
+.intro-egg button{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.sign{font-family:var(--display);font-style:italic;font-size:22px;color:var(--bamboo);margin-top:22px}
+
+/* ---------- VILLA ---------- */
+.villa{padding-block:76px 80px}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:34px}
+.feat a{display:flex;flex-direction:column;gap:8px;padding:20px 16px;border-radius:22px;background:#fbf3e6;box-shadow:0 0 0 1px var(--line-ink);color:var(--ink);text-decoration:none;transition:transform .25s,box-shadow .25s;min-width:0}
+.feat a:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--terra),0 14px 30px rgba(42,28,17,.12)}
+.feat svg{width:34px;height:34px;color:var(--terra)}
+.feat b{font-family:var(--display);font-weight:500;font-size:20px;line-height:1.15}
+.feat span{font-size:14.5px;line-height:1.45;color:var(--ink-soft)}
+.villa-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.villa-photos button{padding:0;border:0;border-radius:22px;overflow:hidden;cursor:zoom-in;background:none}
+.villa-photos img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s}
+.villa-photos button:hover img{transform:scale(1.04)}
+
+/* ---------- ACARA ---------- */
+.event{padding-block:80px 84px;background:radial-gradient(ellipse at 50% 0%,rgba(227,180,108,.1),transparent 60%),var(--night)}
+.when{display:grid;gap:12px;margin-top:34px}
+.when a{display:flex;gap:16px;align-items:center;padding:18px 20px;border-radius:20px;background:var(--night-2);box-shadow:0 0 0 1px var(--line);color:var(--cream);text-decoration:none;transition:box-shadow .25s,transform .25s}
+.when a:hover{box-shadow:0 0 0 1px var(--bamboo);transform:translateY(-2px)}
+.when svg{width:30px;height:30px;color:var(--bamboo);flex:none}
+.when small{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--cream-dim)}
+.when b{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.2}
+.when em{display:block;font-style:normal;font-size:13px;color:var(--bamboo);margin-top:2px}
+.rundown{list-style:none;margin:40px 0 0;padding:0;position:relative}
+.rundown::before{content:"";position:absolute;left:58px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--bamboo),transparent)}
+.rundown li{display:grid;grid-template-columns:58px 1fr;gap:24px;padding:10px 0;position:relative}
+.rundown li::after{content:"";position:absolute;left:54px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--bamboo);box-shadow:0 0 0 4px rgba(227,180,108,.18)}
+.rundown time{font-family:var(--display);font-size:19px;color:var(--bamboo);font-variant-numeric:tabular-nums}
+.rundown b{display:block;font-family:var(--display);font-weight:400;font-size:20px;line-height:1.3}
+.rundown span{font-size:15px;color:var(--cream-dim)}
+.dress{margin-top:30px;padding:18px 20px;border-radius:20px;border:1px dashed var(--line);display:flex;gap:14px;align-items:center}
+.dress .sw{display:flex;gap:6px;flex:none}
+.dress .sw i{width:20px;height:20px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.event-photo{display:none}
+
+/* ---------- GALERI ---------- */
+.gallery{padding-block:80px 84px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:30px}
+.grid button{padding:0;border:0;background:none;border-radius:16px;overflow:hidden;cursor:zoom-in;position:relative}
+.grid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .6s,filter .6s}
+.grid button:hover img{transform:scale(1.05)}
+.grid button:nth-child(1){grid-column:1/-1}
+.grid button:nth-child(1) img{aspect-ratio:4/3}
+.grid button:last-child{grid-column:1/-1}
+.grid button:last-child img{aspect-ratio:16/9}
+.villa-photos button:first-child{grid-column:1/-1}
+.villa-photos button:first-child img{aspect-ratio:4/3}
+.grid figcaption{position:absolute;left:12px;bottom:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);text-shadow:0 1px 8px rgba(0,0,0,.7)}
+#lightbox{position:fixed;inset:0;z-index:70;background:rgba(10,7,4,.94);display:flex;align-items:center;justify-content:center;padding:calc(64px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(64px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+#lightbox img{max-width:100%;max-height:100%;border-radius:12px}
+.lb-btn{position:absolute;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(33,23,16,.9);color:var(--cream);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lb-btn svg{width:22px;height:22px}
+.lb-x{top:calc(14px + env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px))}
+.lb-prev{left:max(10px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb-next{right:max(10px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+.lb-cap{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:var(--cream-dim);font-size:14px;letter-spacing:.1em}
+
+/* ---------- HITUNG MUNDUR ---------- */
+.cdown{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.cd-bg{position:absolute;inset:0;background:linear-gradient(180deg,var(--night) 0%,rgba(22,16,11,.55) 22%,rgba(22,16,11,.6) 70%,var(--night) 100%),url(p7.jpg) center 45%/cover}
+@media (prefers-reduced-motion:no-preference){.cd-bg{animation:zoom 26s ease-in-out infinite alternate}}
+.cd-in{position:relative;z-index:2;padding-block:100px;width:100%;box-sizing:border-box}
+.cd-in h2{font-size:clamp(48px,13vw,92px);font-weight:300}
+.cd-date{font-family:var(--display);font-style:italic;font-size:clamp(18px,4.6vw,24px);color:var(--cream);margin-top:8px}
+.cd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:440px;margin:34px auto 0}
+.cd-tile{border-radius:999px 999px 26px 26px;padding:26px 6px 18px;background:rgba(22,16,11,.42);box-shadow:inset 0 0 0 1px rgba(227,180,108,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center}
+.cd-tile b{font-family:var(--display);font-weight:300;font-size:clamp(60px,18vw,92px);line-height:1;font-variant-numeric:tabular-nums lining-nums}
+.cd-tile span{margin-top:8px;font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--bamboo)}
+.cd-done{grid-column:1/-1;font-family:var(--display);font-style:italic;font-size:24px}
+.cd-acts{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:34px}
+
+/* ---------- RSVP ---------- */
+.rsvp{padding-block:80px 70px}
+.rsvp-grid{display:grid;gap:34px;margin-top:34px;align-items:center}
+.rsvp-egg{width:min(70%,320px);aspect-ratio:3/4;margin:0 auto}
+.rsvp-egg button{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.rsvp-egg .egg{height:100%}
+.light .egg-frame{background:linear-gradient(140deg,#e7b978,#8f5e2c 55%,#d9a560);box-shadow:0 24px 50px rgba(42,28,17,.22)}
+form.card{background:#fbf4e8;border-radius:28px;padding:26px 20px 22px;box-shadow:0 0 0 1px var(--line-ink),0 20px 44px rgba(42,28,17,.12)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field>label,.field>span{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+input,select,textarea{font:400 17px/1.4 var(--body);color:var(--ink);background:#fffaf1;border:1px solid var(--line-ink);border-radius:14px;padding:12px 14px;width:100%;box-sizing:border-box;color-scheme:light}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--terra);outline-offset:1px}
+textarea{min-height:96px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;border:1px solid var(--line-ink);background:#fffaf1;cursor:pointer;font-size:16px;color:var(--ink)}
+.chips label:has(input:checked){background:rgba(185,96,61,.12);border-color:var(--terra)}
+.chips input{width:auto;accent-color:var(--terra)}
+.send{width:100%;font-size:16px;padding:15px 22px;background:linear-gradient(180deg,#c9714b,#a24f2f);color:#fff7ec;border:0;box-shadow:0 10px 24px rgba(162,79,47,.3)}
+.send:hover{background:linear-gradient(180deg,#d07a54,#94462a)}
+.note{margin-top:10px;font-size:14.5px;color:var(--ink-soft);text-align:center;min-height:1.2em}
+
+/* ---------- UCAPAN ---------- */
+.wishes{padding-block:10px 80px}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px}
+.stat{font:500 14px var(--body);color:var(--ink);padding:7px 15px;border-radius:999px;border:1px solid var(--line-ink);background:#fbf4e8;cursor:pointer;transition:background .25s,color .25s}
+.stat b{font-family:var(--display);font-size:17px;font-weight:500;margin-right:5px;font-variant-numeric:tabular-nums}
+.stat.on{background:var(--terra);color:#fff7ec;border-color:var(--terra)}
+.list{display:grid;gap:10px;margin:18px auto 0;max-height:460px;overflow-y:auto;padding:2px;max-width:900px}
+.wish{background:#fbf4e8;border-radius:18px;padding:14px 18px;box-shadow:0 0 0 1px var(--line-ink);min-width:0}
+.wish.mine{box-shadow:0 0 0 1.5px var(--terra)}
+.wish .n{font-weight:500;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:500;padding:2px 10px;border-radius:999px;background:rgba(166,198,101,.25);color:#4c6420}
+.tag.no{background:rgba(185,96,61,.14);color:#8f4426}
+.tag.maybe{background:rgba(197,139,68,.18);color:#7d5622}
+.wish p{margin:4px 0 0;font-size:16px;overflow-wrap:anywhere}
+.wish time{font-size:13px;color:var(--ink-soft)}
+.empty{text-align:center;color:var(--ink-soft);font-style:italic;padding:16px;grid-column:1/-1}
+.wish.flash{animation:flash 2s ease}
+@keyframes flash{0%,40%{box-shadow:0 0 0 2px var(--terra),0 10px 24px rgba(185,96,61,.25)}}
+
+/* ---------- PENUTUP ---------- */
+footer{position:relative;padding-block:90px 150px;text-align:center;overflow:hidden}
+.foot-bg{position:absolute;inset:0;background:linear-gradient(180deg,var(--night) 0%,rgba(22,16,11,.7) 40%,rgba(22,16,11,.82) 100%),url(p6.jpg) center 60%/cover}
+footer>div{position:relative;z-index:2}
+.suksma{font-family:var(--display);font-weight:300;font-size:clamp(70px,22vw,150px);line-height:.9;font-style:italic;color:var(--bamboo)}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;max-width:520px;margin:26px auto 0}
+.flinks a{color:var(--cream);text-decoration:none;font-size:15px;border-bottom:1px solid var(--line)}
+.flinks a:hover{border-bottom-color:var(--bamboo);color:var(--bamboo)}
+.ig{display:inline-flex;align-items:center;gap:10px;margin-top:26px;color:var(--cream);text-decoration:none;font-size:16px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:rgba(22,16,11,.5)}
+.ig:hover{border-color:var(--bamboo)}
+.ig svg{width:20px;height:20px;color:var(--bamboo)}
+
+/* ---------- MENU BAWAH ---------- */
+.bnav{position:fixed;z-index:50;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translate(-50%,24px);opacity:0;transition:transform .5s,opacity .5s;display:flex;gap:2px;padding:6px;border-radius:999px;background:rgba(28,20,13,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 0 0 1px var(--line),0 12px 30px rgba(0,0,0,.4);max-width:calc(100% - 20px);box-sizing:border-box}
+.bnav.in{transform:translate(-50%,0);opacity:1}
+.bnav a{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 10px;border-radius:999px;color:var(--cream-dim);text-decoration:none;font:500 11px/1.1 var(--body);letter-spacing:.03em;transition:background .25s,color .25s}
+.bnav svg{width:20px;height:20px}
+.bnav a.on{background:linear-gradient(180deg,#ecc07c,var(--bamboo-2));color:#1d130b}
+.bnav a:hover:not(.on){color:var(--cream)}
+@media (max-width:360px){.bnav a{padding:7px 6px;font-size:10px}}
+
+/* muncul saat digulir */
+@media (prefers-reduced-motion:no-preference){.rv{transition:opacity .9s,transform .9s}.rv.pre{opacity:.15;transform:translateY(24px)}}
+
+/* ---------- LAYAR LEBAR ---------- */
+@media (min-width:640px){
+  .cd-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:900px;gap:16px}
+  .cd-tile b{font-size:clamp(72px,9vw,118px)}
+  .feat{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid button:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .grid button:nth-child(1) img{aspect-ratio:auto;height:100%}
+  .grid button:last-child{grid-column:span 2}
+  .grid button:last-child img{aspect-ratio:auto;height:100%}
+}
+@media (min-width:900px){
+  .pad{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}
+  .hero-in{padding-bottom:120px}
+  .intro-grid{grid-template-columns:1fr 1.1fr;gap:70px}
+  .intro .copy{text-align:left}
+  .intro .lede,.intro p{margin-left:0}
+  .intro .fan{margin-left:0}
+  .villa-photos{grid-template-columns:1.4fr 1fr 1fr}
+  .villa-photos button:first-child{grid-column:auto}
+  .villa-photos img,.villa-photos button:first-child img{aspect-ratio:4/5}
+  .hero-bg{background:linear-gradient(90deg,rgba(22,16,11,.85) 0%,rgba(22,16,11,.45) 38%,rgba(22,16,11,0) 62%),linear-gradient(180deg,rgba(22,16,11,.5) 0%,rgba(22,16,11,0) 25%,rgba(22,16,11,0) 70%,var(--night) 100%),url(p1.jpg) center 40%/cover}
+  .event-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start}
+  .event-photo{display:block;position:sticky;top:40px;padding:0;border:0;background:none;cursor:zoom-in;border-radius:999px 999px 30px 30px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 30px 60px rgba(0,0,0,.45)}
+  .event-photo img{width:100%;aspect-ratio:3/4.4;object-fit:cover;display:block}
+  .when{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .when a{flex-direction:column;align-items:flex-start;gap:10px}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .rsvp-grid{grid-template-columns:.85fr 1.15fr;gap:70px}
+  .rsvp-egg{width:100%;max-width:400px}
+  form.card{padding:34px 34px 28px}
+  .list{grid-template-columns:1fr 1fr}
+  .bnav{gap:6px;padding:7px}
+  .bnav a{flex-direction:row;gap:8px;padding:10px 16px;font-size:14px}
+  .bnav svg{width:18px;height:18px}
+}
+/* menu bawah: tombol responsif */
+.bnav{touch-action:manipulation}
+.bnav a{touch-action:manipulation;-webkit-tap-highlight-color:transparent;min-height:44px;box-sizing:border-box;justify-content:center;user-select:none;-webkit-user-select:none;transition:background .2s,color .2s,transform .15s}
+.bnav a:active{transform:scale(.92)}
+a,button{touch-action:manipulation}
+/* kembali ke sampul */
+#cover.back{transition:opacity .9s cubic-bezier(.4,0,.2,1),visibility 0s!important}
+.back-cover{position:fixed;z-index:55;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-16px);opacity:0;transition:transform .7s cubic-bezier(.22,.61,.36,1),opacity .7s;display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:8px 16px 8px 13px;border-radius:999px;border:0;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#3a3a34;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.02em;box-shadow:0 6px 20px rgba(0,0,0,.18);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.back-cover.in{transform:translate(-50%,0);opacity:1}
+.back-cover:active{transform:translate(-50%,0) scale(.94)}
+.back-cover svg{width:16px;height:16px}
+button.next{background:none;border:0;padding:0;cursor:pointer;font-family:inherit;}
+</style>
+
+<!-- SAMPUL -->
+<div id="cover" role="dialog" aria-modal="true" aria-label="Sampul undangan">
+  <div class="door l"><div class="door-img"></div></div>
+  <div class="door r"><div class="door-img"></div></div>
+  <div class="cover-in">
+    <div class="eyebrow">You're Invited</div>
+    <div class="cover-egg"><div class="egg-frame" style="height:100%;box-sizing:border-box"><div class="egg"><img src="p6.jpg" alt="Pemandangan sawah dan gunung dari jendela oval villa"></div></div></div>
+    <div class="cover-title">Grand Opening<i>Mula Bali Bamboo Villas</i></div>
+    <div class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="guestName">Tamu Undangan</strong></div>
+    <button class="btn fill" type="button" id="openBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Buka Undangan</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-top"><div class="brand">Mula Bali</div></div>
+  <div class="hero-in pad"><div class="wrap">
+    <div class="eyebrow">Grand Opening</div>
+    <h1>Mula Bali<i>Bamboo Villas</i></h1>
+    <p class="lede">Rumah bambu di tengah sawah terasering, menghadap Gunung Agung.</p>
+    <div class="strip">
+      <a href="#CAL#" target="_blank" rel="noopener" data-cal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Sabtu, 19 Des 2026</a>
+      <a href="#acara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>16.00 WITA</a>
+      <a href="#MAPS#" target="_blank" rel="noopener" data-maps><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Selat, Karangasem</a>
+    </div>
+  </div></div>
+</header>
+
+<!-- SAMBUTAN -->
+<section class="intro pad rv" id="sambutan">
+  <div class="wrap intro-grid">
+    <div class="intro-egg"><button type="button" data-photo="p5.jpg" aria-label="Perbesar foto"><div class="egg-frame" style="height:100%;box-sizing:border-box"><div class="egg"><img src="p5.jpg" alt="Jendela oval berbingkai bambu di kamar mandi, menghadap Gunung Agung"></div></div></button></div>
+    <div class="copy center">
+      <div class="eyebrow">Om Swastyastu</div>
+      <svg class="fan" viewBox="0 0 120 62" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M6 60a54 54 0 0 1 108 0"/><path d="M60 60V8M60 60 33 14M60 60 87 14M60 60 14 33M60 60l46-27M60 60 8 49M60 60l52-11"/></svg>
+      <p class="lede">Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam peresmian Mula Bali Bamboo Villas.</p>
+      <p>Villa ini kami bangun dari bambu, dikerjakan tangan para perajin lokal di Selat, Karangasem. Merupakan kehormatan bagi kami bila Anda berkenan hadir, memberi doa restu, dan menikmati senja pertama bersama kami.</p>
+      <div class="sign">Keluarga Mula Bali</div>
+      <a class="next" href="#villa">Kenali villanya <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- VILLA -->
+<section class="villa light pad rv" id="villa">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Tentang Villa</div>
+      <h2 style="margin-top:10px">Dibangun dari <em>bambu,</em><br>untuk melihat senja</h2>
+    </div>
+    <div class="feat">
+      <a href="#galeri"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 33V3M18 33V3M26 33V3"/><path d="M8 11h4M16 17h4M24 9h4M8 24h4M24 22h4"/></svg><b>Bambu karya tangan</b><span>Lengkungan, tangga, dan dinding anyaman dikerjakan perajin lokal.</span></a>
+      <a href="#galeri"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 28V14l14-9 14 9v14z"/><path d="M4 21h28M12 28v-5h12v5"/></svg><b>2 kamar tidur</b><span>Di lantai atas dan bawah, untuk maksimal 4 tamu.</span></a>
+      <a href="#galeri"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 22c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2 3 2 4 2"/><path d="M4 28c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2 3 2 4 2"/><path d="M12 18V6a3 3 0 0 1 6 0M22 18V9"/></svg><b>Kolam pribadi</b><span>Menghadap sawah terasering dan Gunung Agung.</span></a>
+      <a href="#galeri"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="18" cy="15" rx="9" ry="11"/><path d="M4 33c2-5 7-7 14-7s12 2 14 7"/></svg><b>Jendela oval</b><span>Bak mandi tembaga dengan pemandangan gunung.</span></a>
+    </div>
+    <div class="villa-photos">
+      <button type="button" data-photo="p4.jpg"><img src="p4.jpg" alt="Villa bambu bercahaya lampu di senja hari"></button>
+      <button type="button" data-photo="p3.jpg"><img src="p3.jpg" alt="Meja bambu dan tangga spiral di dalam villa"></button>
+      <button type="button" data-photo="p2.jpg"><img src="p2.jpg" alt="Ruang bambu dengan lengkungan dan pagar kipas"></button>
+    </div>
+    <div class="center"><a class="next" href="#acara">Lihat waktu &amp; tempat acara <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ACARA -->
+<section class="event pad rv" id="acara">
+  <div class="wrap event-grid">
+    <div>
+      <div class="eyebrow">Waktu &amp; Tempat</div>
+      <h2 style="margin-top:10px">Senja pertama<br>di <em>Mula Bali</em></h2>
+      <div class="when">
+        <a href="#CAL#" target="_blank" rel="noopener" data-cal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><small>Tanggal</small><b>Sabtu, 19 Desember 2026</b><em>+ Simpan ke kalender</em></div></a>
+        <a href="#countdown"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><small>Waktu</small><b>16.00 WITA – selesai</b><em>Lihat hitung mundur</em></div></a>
+        <a href="#MAPS#" target="_blank" rel="noopener" data-maps><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><small>Lokasi</small><b>Mula Bali Bamboo Villas</b><em>Selat, Karangasem · Buka peta</em></div></a>
+      </div>
+      <ol class="rundown" aria-label="Susunan acara">
+        <li><time>16.00</time><div><b>Penyambutan tamu</b><span>Welcome drink di teras bambu</span></div></li>
+        <li><time>16.30</time><div><b>Doa bersama</b><span>Upacara pemelaspas, memohon restu untuk bangunan baru</span></div></li>
+        <li><time>17.15</time><div><b>Pemotongan pita</b><span>Peresmian Mula Bali Bamboo Villas</span></div></li>
+        <li><time>17.30</time><div><b>Tur villa</b><span>Menjelajah kamar, kolam, dan jendela oval</span></div></li>
+        <li><time>18.00</time><div><b>Senja &amp; ramah tamah</b><span>Makan malam dengan pemandangan sawah</span></div></li>
+      </ol>
+      <div class="dress"><div class="sw" aria-hidden="true"><i style="background:#f4ecdf"></i><i style="background:#c9a77a"></i><i style="background:#7a5a3a"></i></div><div><b style="font-weight:500">Dress code</b><br><span style="color:var(--cream-dim);font-size:15px">Busana santai rapi, nuansa putih dan earth tone.</span></div></div>
+      <div class="acts">
+        <a class="btn fill" href="#MAPS#" target="_blank" rel="noopener" data-maps><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Petunjuk Arah</a>
+        <a class="btn" href="#CAL#" target="_blank" rel="noopener" data-cal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Simpan Tanggal</a>
+      </div>
+      <a class="next" href="#galeri">Lihat galeri villa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <button class="event-photo" type="button" data-photo="p8.jpg" aria-label="Perbesar foto"><img src="p8.jpg" alt="Teras bambu dengan jaring gantung menghadap sawah"></button>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section class="gallery pad rv" id="galeri">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Galeri</div>
+      <h2 style="margin-top:10px">Sudut-sudut <em>Mula Bali</em></h2>
+    </div>
+    <div class="grid" id="grid">
+      <button type="button" data-src="p1.jpg"><img src="p1.jpg" alt="Kolam pribadi bercahaya hijau menghadap sawah dan gunung"><figcaption>Kolam &amp; Gunung Agung</figcaption></button>
+      <button type="button" data-src="p6.jpg"><img src="p6.jpg" alt="Jendela oval menghadap sawah terasering"><figcaption>Jendela oval</figcaption></button>
+      <button type="button" data-src="p4.jpg"><img src="p4.jpg" alt="Villa bambu bercahaya di senja"><figcaption>Senja</figcaption></button>
+      <button type="button" data-src="p2.jpg"><img src="p2.jpg" alt="Ruang bambu dengan meja melengkung"><figcaption>Ruang bambu</figcaption></button>
+      <button type="button" data-src="p3.jpg"><img src="p3.jpg" alt="Tangga spiral bambu"><figcaption>Tangga spiral</figcaption></button>
+      <button type="button" data-src="p5.jpg"><img src="p5.jpg" alt="Bak mandi tembaga dan jendela oval"><figcaption>Kamar mandi</figcaption></button>
+      <button type="button" data-src="p7.jpg"><img src="p7.jpg" alt="Atap bambu melengkung di atas teras"><figcaption>Atap bambu</figcaption></button>
+      <button type="button" data-src="p8.jpg"><img src="p8.jpg" alt="Jaring gantung di teras menghadap sawah"><figcaption>Jaring gantung</figcaption></button>
+    </div>
+    <div class="center"><a class="next" href="#countdown">Menuju hari peresmian <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- HITUNG MUNDUR -->
+<section class="cdown" id="countdown">
+  <div class="cd-bg" aria-hidden="true"></div>
+  <div class="cd-in pad">
+    <div class="eyebrow">Save the Date</div>
+    <h2 style="margin-top:10px">Menuju <em>Grand Opening</em></h2>
+    <div class="cd-date">Sabtu, 19 Desember 2026 · 16.00 WITA</div>
+    <div class="cd-grid" id="count" aria-live="off"></div>
+    <div class="cd-acts">
+      <a class="btn fill" href="#CAL#" target="_blank" rel="noopener" data-cal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Simpan ke Kalender</a>
+      <a class="next" href="#rsvp">Konfirmasi kehadiran <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp light pad rv" id="rsvp">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Reservasi Kehadiran</div>
+      <h2 style="margin-top:10px">RSVP</h2>
+      <p style="max-width:40ch;margin:10px auto 0;color:var(--ink-soft)">Tempat kami terbatas. Mohon konfirmasi kehadiran sebelum <b style="color:var(--ink);font-weight:500">12 Desember 2026</b>.</p>
+    </div>
+    <div class="rsvp-grid">
+      <div class="rsvp-egg"><button type="button" data-photo="p6.jpg" aria-label="Perbesar foto"><div class="egg-frame" style="height:100%;box-sizing:border-box"><div class="egg"><img src="p6.jpg" alt="Pemandangan dari jendela oval villa"></div></div></button></div>
+      <form class="card" id="form" novalidate>
+        <div class="field"><label for="fNama">Nama</label><input id="fNama" maxlength="60" autocomplete="name" placeholder="Nama Anda"></div>
+        <div class="field"><label for="fAsal">Instansi / hubungan</label><input id="fAsal" maxlength="60" placeholder="Contoh: keluarga, rekan, tetangga"></div>
+        <div class="field"><span>Kehadiran</span>
+          <div class="chips" role="radiogroup" aria-label="Kehadiran">
+            <label><input type="radio" id="fH1" name="hadir" value="hadir" checked> Hadir</label>
+            <label><input type="radio" id="fH2" name="hadir" value="tidak"> Berhalangan</label>
+            <label><input type="radio" id="fH3" name="hadir" value="ragu"> Masih ragu</label>
+          </div>
+        </div>
+        <div class="field"><label for="fJumlah">Jumlah orang</label><select id="fJumlah"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+        <div class="field"><label for="fPesan">Ucapan &amp; doa</label><textarea id="fPesan" maxlength="500" placeholder="Tulis ucapan untuk Mula Bali"></textarea></div>
+        <button class="btn send" type="submit" id="sendBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 20 4l-6 16-3-7z"/><path d="m11 13 9-9"/></svg>Kirim Konfirmasi</button>
+        <div class="note" id="note" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- UCAPAN -->
+<section class="wishes light pad" id="ucapan">
+  <div class="wrap center">
+    <div class="eyebrow">Ucapan &amp; Doa</div>
+    <div class="stats">
+      <button class="stat on" type="button" data-filter="all"><b id="sA">0</b>Semua</button>
+      <button class="stat" type="button" data-filter="hadir"><b id="sH">0</b>Orang hadir</button>
+      <button class="stat" type="button" data-filter="tidak"><b id="sT">0</b>Berhalangan</button>
+      <button class="stat" type="button" data-filter="ragu"><b id="sR">0</b>Masih ragu</button>
+    </div>
+    <div class="list" id="list"><div class="empty">Ucapan dari para tamu akan tampil di sini.</div></div>
+    <a class="next" href="#rsvp" data-write>Tulis ucapan Anda <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<footer class="pad">
+  <div class="foot-bg" aria-hidden="true"></div>
+  <div>
+    <div class="eyebrow">Terima kasih</div>
+    <div class="suksma">Suksma</div>
+    <p class="lede" style="max-width:30ch;margin:16px auto 0">Atas doa dan kehadiran Anda di hari pertama Mula Bali.</p>
+    <div class="eyebrow" style="margin-top:22px;color:var(--cream-dim)">Om Shanti Shanti Shanti Om</div>
+    <a class="ig" href="https://www.instagram.com/mulabali_bamboovilla/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@mulabali_bamboovilla</a>
+    <div class="flinks">
+      <a href="#sambutan">Sambutan</a><a href="#villa">Villa</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#rsvp">RSVP</a><a href="#ucapan">Ucapan</a>
+      <a href="#MAPS#" target="_blank" rel="noopener" data-maps>Peta</a><a href="#CAL#" target="_blank" rel="noopener" data-cal>Kalender</a>
+    </div>
+    <a class="next" href="#home">Kembali ke atas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    <div><button class="next" type="button" data-cover>Kembali ke sampul undangan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button></div>
+  </div>
+</footer>
+
+<button class="back-cover" id="backCover" type="button" data-cover hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Sampul</button>
+<nav class="bnav" id="bnav" aria-label="Menu undangan" hidden>
+  <a href="#home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg><span>Home</span></a>
+  <a href="#villa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="11" rx="6" ry="8"/><path d="M3 21h18"/></svg><span>Villa</span></a>
+  <a href="#acara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Acara</span></a>
+  <a href="#galeri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><span>Galeri</span></a>
+  <a href="#rsvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H8l-4 4z"/><path d="m9 10 2 2 4-4"/></svg><span>RSVP</span></a>
+  <a href="#ucapan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.6 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><span>Ucapan</span></a>
+</nav>
+
+<div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto">
+  <img alt="">
+  <button class="lb-btn lb-x" type="button" aria-label="Tutup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Foto sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 6-6 6 6 6"/></svg></button>
+  <button class="lb-btn lb-next" type="button" aria-label="Foto berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- Data acara (ubah di sini) ---------- */
+  var EVENT = {
+    start: "2026-12-19T16:00:00+08:00",
+    calStart: "20261219T080000Z", calEnd: "20261219T120000Z",
+    title: "Grand Opening Mula Bali Bamboo Villas",
+    place: "Mula Bali Bamboo Villas, Selat, Karangasem, Bali"
+  };
+  var MAPS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(EVENT.place);
+  var CAL = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(EVENT.title) + "&dates=" + EVENT.calStart + "/" + EVENT.calEnd + "&location=" + encodeURIComponent(EVENT.place) + "&details=" + encodeURIComponent("Undangan peresmian Mula Bali Bamboo Villas");
+  document.querySelectorAll("[data-maps]").forEach(function(a){ a.href = MAPS; });
+  document.querySelectorAll("[data-cal]").forEach(function(a){ a.href = CAL; });
+
+  /* ---------- Nama tamu: tambahkan #Nama-Tamu di akhir tautan ---------- */
+  var sections = ["home","sambutan","villa","acara","galeri","countdown","rsvp","ucapan"];
+  var h = ""; try { h = decodeURIComponent((location.hash || "").slice(1)); } catch(e){}
+  if (h && sections.indexOf(h) < 0) $("guestName").textContent = h.replace(/[-_+]/g, " ").slice(0, 60);
+
+  /* ---------- Sampul ---------- */
+  var cover = $("cover"), bnav = $("bnav"), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("locked");
+  var openTimer = null, backBtn = $("backCover");
+  function openInvite(){
+    clearTimeout(openTimer);
+    cover.classList.remove("back");
+    cover.classList.add("opening");
+    document.documentElement.classList.add("opened");
+    document.documentElement.classList.remove("locked");
+    scrollTo(0, 0);
+    openTimer = setTimeout(function(){ cover.hidden = true; bnav.hidden = false; backBtn.hidden = false; requestAnimationFrame(function(){ bnav.classList.add("in"); backBtn.classList.add("in"); }); }, reduce ? 0 : 1600);
+  }
+  function showCover(){
+    clearTimeout(openTimer);
+    bnav.classList.remove("in"); backBtn.classList.remove("in");
+    openTimer = setTimeout(function(){ bnav.hidden = true; backBtn.hidden = true; }, 450);
+    document.documentElement.classList.remove("opened");
+    cover.hidden = false; cover.classList.add("back");
+    void cover.offsetWidth;
+    cover.classList.remove("opening");
+    document.documentElement.classList.add("locked");
+    setTimeout(function(){ scrollTo(0, 0); $("openBtn").focus({preventScroll: true}); }, 700);
+  }
+  $("openBtn").addEventListener("click", openInvite);
+  document.querySelectorAll("[data-cover]").forEach(function(b){ b.addEventListener("click", function(e){ e.preventDefault(); showCover(); }); });
+
+  var NAV_IDS = sections, NAV_MAP = {sambutan: "home", countdown: "rsvp"};
+
+  /* ---------- Menu bawah: respons cepat, tetap satu halaman ---------- */
+  var navLinks = bnav.querySelectorAll("a"), navLock = 0, navTimer = null, ticking = false;
+  function absTop(el){ var y = 0; while (el){ y += el.offsetTop; el = el.offsetParent; } return y; }
+  function setActive(id){
+    id = NAV_MAP[id] || id;
+    navLinks.forEach(function(a){ var on = a.getAttribute("href") === "#" + id; a.classList.toggle("on", on); if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+  }
+  function spyNow(){
+    if (navLock) return;
+    var y = pageYOffset, mid = y + innerHeight * .4, cur = NAV_IDS[0];
+    var atEnd = y + innerHeight >= document.documentElement.scrollHeight - 4;
+    NAV_IDS.forEach(function(id){ var el = $(id); if (!el) return; var top = absTop(el); if (top <= mid || (atEnd && top < y + innerHeight * .9)) cur = id; });
+    setActive(cur);
+  }
+  function go(sel){
+    var t = document.querySelector(sel); if (!t) return;
+    document.documentElement.classList.remove("locked");
+    t.classList.remove("pre");
+    var y = Math.max(0, absTop(t));
+    var far = Math.abs(y - pageYOffset) > innerHeight * 6;
+    navLock = 1; setActive(t.id);
+    window.scrollTo({top: y, behavior: (reduce || far) ? "instant" : "smooth"});
+    clearTimeout(navTimer); navTimer = setTimeout(function(){ navLock = 0; spyNow(); }, 1200);
+  }
+  addEventListener("scroll", function(){ if (!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; spyNow(); }); } }, {passive: true});
+  addEventListener("scrollend", function(){ if (navLock){ clearTimeout(navTimer); navLock = 0; spyNow(); } });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    if (a.hasAttribute("data-maps") || a.hasAttribute("data-cal")) return;
+    var sx = 0, sy = 0, fired = false;
+    function activate(){ go(a.getAttribute("href")); if (a.hasAttribute("data-write")) setTimeout(function(){ var f = $("fNama"); if (f && !f.disabled) f.focus({preventScroll: true}); }, 800); }
+    a.addEventListener("pointerdown", function(e){ sx = e.clientX; sy = e.clientY; fired = false; });
+    a.addEventListener("pointerup", function(e){
+      if (e.pointerType === "mouse") return;
+      if (Math.abs(e.clientX - sx) > 12 || Math.abs(e.clientY - sy) > 12) return;
+      fired = true; activate();
+    });
+    a.addEventListener("click", function(e){ e.preventDefault(); if (fired){ fired = false; return; } activate(); });
+  });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.remove("pre"); io.unobserve(e.target); } }); }, {threshold: .1});
+    document.querySelectorAll(".rv").forEach(function(s){ if (s.getBoundingClientRect().top > innerHeight){ s.classList.add("pre"); io.observe(s); } });
+  }
+
+  /* ---------- Foto besar ---------- */
+  var lb = $("lightbox"), lbImg = lb.querySelector("img"), at = 0, lastFocus = null;
+  var photos = Array.prototype.map.call($("grid").children, function(b){ return {src: b.dataset.src, alt: b.querySelector("img").alt, cap: b.querySelector("figcaption").textContent}; });
+  function show(i){ at = (i + photos.length) % photos.length; lbImg.src = photos[at].src; lbImg.alt = photos[at].alt; $("lbCap").textContent = photos[at].cap + "  ·  " + (at + 1) + " / " + photos.length; }
+  function openLb(i){ lastFocus = document.activeElement; show(i); lb.hidden = false; lb.querySelector(".lb-x").focus(); }
+  function closeLb(){ lb.hidden = true; if (lastFocus) lastFocus.focus(); }
+  Array.prototype.forEach.call($("grid").children, function(b, i){ b.addEventListener("click", function(){ openLb(i); }); });
+  document.querySelectorAll("[data-photo]").forEach(function(b){ b.addEventListener("click", function(){ var i = photos.findIndex(function(p){ return p.src === b.dataset.photo; }); openLb(Math.max(0, i)); }); });
+  lb.querySelector(".lb-prev").addEventListener("click", function(){ show(at - 1); });
+  lb.querySelector(".lb-next").addEventListener("click", function(){ show(at + 1); });
+  lb.querySelector(".lb-x").addEventListener("click", closeLb);
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+  var tx = null;
+  lb.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive: true});
+  lb.addEventListener("touchend", function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) show(at + (dx < 0 ? 1 : -1)); tx = null; });
+  document.addEventListener("keydown", function(e){ if (lb.hidden) return; if (e.key === "Escape") closeLb(); if (e.key === "ArrowRight") show(at + 1); if (e.key === "ArrowLeft") show(at - 1); });
+
+  /* ---------- Hitung mundur ---------- */
+  var target = new Date(EVENT.start).getTime();
+  function pad(n){ return String(n).padStart(2, "0"); }
+  function tick(){
+    var d = target - Date.now();
+    if (d <= 0){ $("count").innerHTML = '<p class="cd-done">Mula Bali Bamboo Villas resmi dibuka. Terima kasih atas doa Anda.</p>'; return false; }
+    var s = Math.floor(d / 1000), v = [Math.floor(s / 86400), pad(Math.floor(s % 86400 / 3600)), pad(Math.floor(s % 3600 / 60)), pad(s % 60)], L = ["Hari","Jam","Menit","Detik"], out = "";
+    for (var i = 0; i < 4; i++) out += '<div class="cd-tile"><b>' + v[i] + '</b><span>' + L[i] + '</span></div>';
+    $("count").innerHTML = out; return true;
+  }
+  if (tick()) setInterval(tick, 1000);
+
+  /* ---------- RSVP & ucapan ---------- */
+  var form = $("form"), note = $("note"), send = $("sendBtn");
+  var db = null, me = null, writable = true, docsCache = [], filter = "all";
+  var labels = {hadir: "Hadir", tidak: "Berhalangan", ragu: "Masih ragu"};
+  function esc(s){ var d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; }
+  document.querySelectorAll(".stat").forEach(function(b){ b.addEventListener("click", function(){ filter = b.dataset.filter; document.querySelectorAll(".stat").forEach(function(x){ x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", String(x === b)); }); render(docsCache); }); });
+  function render(docs){
+    docsCache = docs;
+    var H = 0, T = 0, R = 0, out = "";
+    docs.forEach(function(d){
+      var w = d.data() || {};
+      if (w.hadir === "hadir") H += Number(w.jumlah) || 1;
+      if (w.hadir === "tidak") T++;
+      if (w.hadir === "ragu") R++;
+      if (filter !== "all" && w.hadir !== filter) return;
+      var t = w.waktu ? new Date(w.waktu).toLocaleDateString("id-ID", {day: "numeric", month: "long", year: "numeric"}) : "";
+      out += '<div class="wish' + (d.id === me ? ' mine' : '') + '"><div class="n">' + esc(w.nama || "Tamu") + (w.asal ? ' <span style="font-weight:300;color:var(--ink-soft)">· ' + esc(w.asal) + '</span>' : '') + ' <span class="tag' + (w.hadir === "tidak" ? " no" : w.hadir === "ragu" ? " maybe" : "") + '">' + esc(labels[w.hadir] || "") + (w.hadir === "hadir" && w.jumlah > 1 ? " · " + Number(w.jumlah) + " orang" : "") + '</span></div>' + (w.pesan ? '<p>' + esc(w.pesan) + '</p>' : '') + (t ? '<time>' + t + '</time>' : '') + '</div>';
+    });
+    $("list").innerHTML = out || (docs.length ? '<div class="empty">Belum ada tamu di kategori ini.</div>' : '<div class="empty">Belum ada ucapan. Jadilah yang pertama mengirim doa.</div>');
+    $("sA").textContent = docs.length; $("sH").textContent = H; $("sT").textContent = T; $("sR").textContent = R;
+  }
+  function readOnly(msg){ writable = false; Array.prototype.forEach.call(form.elements, function(x){ x.disabled = true; }); note.textContent = msg; }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (!db || !me || !writable){ note.textContent = note.textContent || "Konfirmasi belum bisa dikirim dari tampilan ini."; return; }
+    var nama = $("fNama").value.trim();
+    if (!nama){ note.textContent = "Isi nama Anda terlebih dahulu."; $("fNama").focus(); return; }
+    var hadir = (form.querySelector('input[name="hadir"]:checked') || {}).value || "hadir";
+    send.disabled = true; note.textContent = "Mengirim…";
+    db.collection("rsvp").doc(me).set({nama: nama.slice(0, 60), asal: $("fAsal").value.trim().slice(0, 60), hadir: hadir, jumlah: hadir === "hadir" ? Number($("fJumlah").value) : 0, pesan: $("fPesan").value.trim().slice(0, 500), waktu: Date.now()})
+      .then(function(){
+        send.disabled = false; send.lastChild.nodeValue = "Perbarui Konfirmasi"; note.textContent = "Terima kasih, konfirmasi Anda sudah tersimpan.";
+        setTimeout(function(){ go("#ucapan"); setTimeout(function(){ var m = document.querySelector(".wish.mine"); if (m){ m.scrollIntoView({block: "nearest", behavior: "smooth"}); m.classList.add("flash"); } }, 700); }, 1100);
+      }, function(err){ send.disabled = false; if (err && err.code === "invalid_argument") readOnly("Tautan ini hanya untuk melihat. Minta tuan rumah memberi akses agar Anda bisa mengirim konfirmasi."); else note.textContent = "Belum terkirim. Periksa koneksi lalu coba lagi."; });
+  });
+
+  (async function(){
+    if (!window.claude || !claude.use){ readOnly("Formulir aktif saat undangan dibuka melalui tautan Claude."); return; }
+    var user = await claude.use("user");
+    db = await claude.use("db");
+    if (!db){ readOnly("Masuk ke akun Claude untuk mengirim konfirmasi."); $("list").innerHTML = '<div class="empty">Masuk ke akun Claude untuk membaca ucapan para tamu.</div>'; return; }
+    try { me = user ? await user.id() : null; } catch(e){ me = null; }
+    var can = null; try { can = user && user.can ? await user.can("data.write") : null; } catch(e){}
+    if (!me || can === false) readOnly("Tautan ini hanya untuk melihat. Minta tuan rumah memberi akses agar Anda bisa mengirim konfirmasi.");
+    var timer = setTimeout(function(){ $("list").innerHTML = '<div class="empty">Ucapan belum bisa dimuat. Coba buka ulang sebentar lagi.</div>'; }, 10000);
+    db.collection("rsvp").orderBy("waktu", "desc").limit(300).onSnapshot(function(snap){
+      if (!snap.metadata.fromCache) clearTimeout(timer);
+      render(snap.docs);
+      if (me && writable && !$("fNama").value){
+        var mine = snap.docs.filter(function(d){ return d.id === me; })[0];
+        if (mine){ var m = mine.data() || {}; $("fNama").value = m.nama || ""; $("fAsal").value = m.asal || ""; $("fPesan").value = m.pesan || "";
+          var rb = form.querySelector('input[name="hadir"][value="' + m.hadir + '"]'); if (rb) rb.checked = true;
+          if (m.jumlah) $("fJumlah").value = String(m.jumlah); send.lastChild.nodeValue = "Perbarui Konfirmasi"; }
+      }
+    }, function(){ clearTimeout(timer); $("list").innerHTML = '<div class="empty">Ucapan tidak bisa dimuat saat ini.</div>'; });
+  })();
+})();
+</script>
+
+<a href="../../index.html#invitation" aria-label="Kembali ke portfolio Nubira" style="position:fixed;z-index:80;top:calc(12px + env(safe-area-inset-top,0px));left:max(12px,env(safe-area-inset-left,0px));display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:999px;background:rgba(10,24,56,.86);color:#fff;font:600 13px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.2);backdrop-filter:blur(8px)">&larr; Nubira</a><!--nb-guard--><style>body.nb-guard{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}body.nb-guard input,body.nb-guard textarea,body.nb-guard select,body.nb-guard [contenteditable]{-webkit-user-select:text;user-select:text}body.nb-guard img{-webkit-user-drag:none}</style><script>(function(){var d=document,ok=function(t){return t&&t.closest&&t.closest('input,textarea,select,[contenteditable]')};function on(){d.body&&d.body.classList.add('nb-guard')}d.body?on():d.addEventListener('DOMContentLoaded',on);d.addEventListener('contextmenu',function(e){if(!ok(e.target))e.preventDefault()});d.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault()});d.addEventListener('keydown',function(e){var k=(e.key||'').toLowerCase(),m=e.ctrlKey||e.metaKey;if(e.key==='F12'||(m&&(k==='u'||k==='s'||k==='p'))||(m&&e.shiftKey&&(k==='i'||k==='j'||k==='c'))){if(!ok(e.target)){e.preventDefault();e.stopPropagation()}}},true)})();</script>
+</body></html>

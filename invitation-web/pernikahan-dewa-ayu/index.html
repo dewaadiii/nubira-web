@@ -1,0 +1,924 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dewa &amp; Ayu Wedding</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<style>
+/* Layout: kolom undangan 540px (penuh di HP), hero foto senja dengan teks di langit, bagian-bagian krem bergelombang, bunga putih di tepi. Satu tampilan hangat (senja). */
+:root{
+  --cream:#fbf4ea;
+  --cream-2:#f4e7d6;
+  --card:rgba(255,251,245,.88);
+  --ink:#5a3a22;          /* cokelat tua untuk teks */
+  --ink-soft:#80614a;
+  --gold:#b07d3e;
+  --gold-2:#8f6129;
+  --line:rgba(176,125,62,.35);
+  --script:"Great Vibes","Brush Script MT",cursive;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+[hidden]{display:none!important}
+html{background:var(--cream);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--cream);color:var(--ink);font-family:var(--serif);font-weight:500;font-size:17px;line-height:1.55}
+.page{position:relative;max-width:540px;margin:0 auto;background:var(--cream);overflow:hidden}
+@media (min-width:700px){
+  body{background:#e9d6bd url(sky.jpg) center/cover fixed}
+  .page{box-shadow:0 0 0 1px rgba(255,255,255,.4),0 30px 80px rgba(90,58,34,.35)}
+}
+.pad{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.script{font-family:var(--script);font-weight:400;color:var(--ink);line-height:1.05}
+.caps{font-size:13px;letter-spacing:.38em;text-transform:uppercase;font-weight:600}
+.soft{color:var(--ink-soft)}
+.center{text-align:center}
+
+/* ornamen garis dengan cincin */
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--gold);margin:10px auto}
+.orn::before,.orn::after{content:"";height:1px;width:min(28%,110px);background:linear-gradient(90deg,transparent,var(--gold))}
+.orn::after{transform:scaleX(-1)}
+.orn svg{width:22px;height:16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 22px;border-radius:999px;border:1.5px solid var(--gold);background:rgba(255,250,243,.85);color:var(--ink);font:600 16px/1 var(--serif);text-decoration:none;cursor:pointer;transition:background .25s,transform .25s,box-shadow .25s}
+.btn:hover{background:#fff;transform:translateY(-1px);box-shadow:0 6px 18px rgba(143,97,41,.18)}
+.btn:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+.btn svg{width:16px;height:16px;flex:none}
+.btn.solid{background:linear-gradient(180deg,#c2924f,var(--gold-2));color:#fffaf2;border-color:transparent;box-shadow:0 6px 16px rgba(143,97,41,.3)}
+.btn.solid:hover{background:linear-gradient(180deg,#b88644,#7f5420)}
+
+/* bunga (digambar oleh skrip) */
+.bloom{position:absolute;pointer-events:none;z-index:4;overflow:visible;filter:drop-shadow(0 4px 6px rgba(120,80,40,.18))}
+.bloom.flip{transform:scaleX(-1)}
+@media (prefers-reduced-motion:no-preference){
+  .bloom g.sway{animation:sway 7s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0% 100%}
+  .bloom g.sway.b{animation-duration:9s;animation-delay:-3s}
+  @keyframes sway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.6deg)}}
+}
+
+/* gelombang kain */
+.wave{position:absolute;left:0;width:100%;height:auto;display:block;pointer-events:none;z-index:1}
+
+/* HERO */
+.hero{position:relative;z-index:1}
+.hero-img{display:block;width:100%;height:auto;max-width:100%}
+.hero::before{content:"";position:absolute;inset:0 0 auto;height:42%;background:linear-gradient(180deg,rgba(251,244,234,.55),rgba(251,244,234,0));z-index:1}
+.hero-top{position:absolute;z-index:3;inset:0 0 auto;text-align:center;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+.mono{display:flex;align-items:center;gap:6px;font-family:var(--script);font-size:34px;color:var(--ink);line-height:1;text-align:left;height:44px}
+.mono svg{width:46px;height:20px;color:var(--gold)}
+.hero-top .caps{margin-top:clamp(8px,4vw,22px);color:var(--ink)}
+.names{font-family:var(--script);font-size:clamp(58px,17vw,88px);line-height:1;margin:2px 0 0;color:var(--ink);text-shadow:0 1px 14px rgba(255,244,230,.7)}
+.names .amp{font-size:.72em;color:var(--gold-2);margin:0 .06em}
+.hero-bottom{position:relative;z-index:3;margin-top:-150px;padding-top:70px;background:linear-gradient(180deg,rgba(251,244,234,0),var(--cream) 80px);text-align:center;padding-bottom:58px}
+.quote{font-style:italic;font-size:19px;line-height:1.35;color:var(--ink)}
+.date{display:flex;align-items:center;justify-content:center;gap:16px;margin:6px 0 18px;font-weight:600}
+.date span{font-size:17px;letter-spacing:.14em}
+.date b{font-weight:500;font-size:34px;line-height:1;padding:0 16px;border-left:1px solid var(--gold);border-right:1px solid var(--gold);font-variant-numeric:lining-nums}
+.guest{font-size:15px;margin-bottom:12px}
+.guest strong{display:block;font-size:21px;color:var(--ink)}
+
+/* tombol melayang */
+.fab{position:fixed;z-index:30;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,250,243,.9);backdrop-filter:blur(6px);color:var(--ink);box-shadow:0 0 0 1px var(--line),0 6px 18px rgba(90,58,34,.18);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.fab svg{width:22px;height:22px}
+.fab:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+#menuBtn{top:calc(14px + env(safe-area-inset-top,0px));right:max(14px,calc(50vw - 270px + 14px),env(safe-area-inset-right,0px))}
+#topBtn{bottom:calc(18px + env(safe-area-inset-bottom,0px));right:max(14px,calc(50vw - 270px + 14px),env(safe-area-inset-right,0px));width:54px;height:54px;transition:opacity .3s,transform .3s}
+#topBtn.off{opacity:0;transform:translateY(10px);pointer-events:none}
+#menu{position:fixed;z-index:40;inset:0;background:rgba(90,58,34,.35);backdrop-filter:blur(3px);display:flex;justify-content:flex-end}
+#menu .sheet{width:min(280px,82vw);height:100%;background:var(--cream);padding:calc(78px + env(safe-area-inset-top,0px)) 28px 28px;box-sizing:border-box;box-shadow:-10px 0 40px rgba(90,58,34,.2);display:flex;flex-direction:column;gap:4px}
+#menu a{font-family:var(--script);font-size:34px;color:var(--ink);text-decoration:none;padding:4px 0}
+#menu a:hover,#menu a:focus-visible{color:var(--gold-2);outline:none}
+
+section{position:relative;z-index:1}
+
+/* OUR STORY */
+.story{padding-block:24px 30px}
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;align-items:center;position:relative;z-index:3}
+.polaroid{position:relative;background:#fff;padding:9px 9px 30px;transform:rotate(-5deg);box-shadow:0 14px 30px rgba(90,58,34,.25);margin:10px 0 0 4px}
+.polaroid img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover;max-width:100%}
+.polaroid::before{content:"";position:absolute;top:-12px;left:50%;width:70px;height:24px;transform:translateX(-50%) rotate(3deg);background:rgba(232,214,184,.75);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+h2.script{font-size:clamp(48px,13vw,62px);margin:0;text-align:center}
+.story p{margin:0 0 10px;font-size:16.5px;text-align:center;text-wrap:pretty}
+.more{display:grid;gap:12px;margin:6px 0 14px}
+.who{background:var(--card);border-radius:16px;padding:12px 14px;box-shadow:0 0 0 1px var(--line);text-align:center}
+.who .script{font-size:34px}
+.who div{font-size:15px}
+
+/* DETAILS */
+.details{padding-block:20px 34px;text-align:center}
+.details .lead{margin:0 auto 18px;max-width:30ch}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);margin-top:8px}
+.cols>div{padding:0 6px;display:flex;flex-direction:column;align-items:center;min-width:0}
+.cols>div+div{border-left:1px solid var(--line)}
+.cols svg{width:34px;height:34px;color:var(--gold);margin-bottom:6px}
+.cols h3{font-weight:600;font-size:19px;margin:0 0 2px}
+.cols p{margin:0;font-size:14.5px;line-height:1.35}
+
+/* GALLERY */
+.gallery{padding-block:18px 26px;text-align:center}
+.carousel{position:relative;margin-top:16px;padding:0 28px}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 16px)/3);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 10px}
+.track::-webkit-scrollbar{display:none}
+.track button{scroll-snap-align:start;border:0;padding:0;background:none;border-radius:12px;overflow:hidden;cursor:zoom-in;box-shadow:0 8px 18px rgba(90,58,34,.18)}
+.track button:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+.track img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;max-width:100%;transition:transform .5s}
+.track button:hover img{transform:scale(1.05)}
+.arrow{position:absolute;top:50%;transform:translateY(-60%);width:42px;height:42px;border-radius:50%;border:0;background:#fffaf3;color:var(--ink);box-shadow:0 0 0 1px var(--line),0 4px 12px rgba(90,58,34,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2}
+.arrow svg{width:20px;height:20px}
+.arrow.prev{left:-6px}.arrow.next{right:-6px}
+.arrow:focus-visible{outline:2px solid var(--gold-2)}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:6px}
+.dots button{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--gold);background:transparent;padding:0;cursor:pointer}
+.dots button.on{background:var(--gold)}
+#lightbox{position:fixed;inset:0;z-index:50;background:rgba(45,28,16,.92);display:flex;align-items:center;justify-content:center;padding:calc(20px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+#lightbox img{max-width:100%;max-height:100%;border-radius:10px}
+
+/* RSVP + COUNTDOWN */
+.rsvp{padding-block:22px 10px}
+.pair{display:grid;grid-template-columns:.92fr 1.08fr;gap:10px;position:relative;z-index:3}
+.card{background:var(--card);border-radius:22px;padding:18px 12px;box-shadow:0 0 0 1px rgba(176,125,62,.18),0 12px 30px rgba(90,58,34,.12);text-align:center;min-width:0;backdrop-filter:blur(4px)}
+.card h3{font-weight:500;font-size:clamp(24px,6.6vw,30px);margin:0 0 4px;line-height:1.1}
+.card p{margin:0 0 12px;font-size:14.5px;line-height:1.3}
+.card .btn{padding:10px 12px;font-size:14.5px;width:100%;box-sizing:border-box}
+.count{display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px}
+.count div{display:flex;flex-direction:column;align-items:center}
+.count div+div{border-left:1px solid var(--line)}
+.count b{font-weight:500;font-size:clamp(26px,7.4vw,34px);line-height:1.1;font-variant-numeric:tabular-nums lining-nums}
+.count span{font-size:13px;color:var(--ink-soft)}
+@media (max-width:370px){.pair{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr}.polaroid{max-width:260px;margin:10px auto 0}}
+
+/* WISHES */
+.wishes{padding-block:34px 20px;text-align:center}
+.stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
+.stat{background:var(--card);border-radius:999px;padding:5px 14px;box-shadow:0 0 0 1px var(--line);font-size:14px}
+.stat b{font-size:19px;margin-right:4px;font-variant-numeric:tabular-nums}
+.list{display:grid;gap:10px;margin-top:14px;max-height:420px;overflow-y:auto;text-align:left;padding:2px}
+.wish{background:var(--card);border-radius:16px;padding:12px 16px;box-shadow:0 0 0 1px rgba(176,125,62,.18);min-width:0}
+.wish .n{font-weight:600;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:600;padding:1px 9px;border-radius:999px;background:rgba(176,125,62,.14);color:var(--gold-2)}
+.tag.no{background:rgba(140,80,70,.12);color:#8a4f45}
+.wish p{margin:4px 0 0;font-size:16px;overflow-wrap:anywhere}
+.wish time{font-size:13px;color:var(--ink-soft)}
+.empty{padding:16px;color:var(--ink-soft);font-style:italic;text-align:center;grid-column:1/-1}
+
+/* RSVP sheet */
+#rsvp{position:fixed;inset:0;z-index:45;background:rgba(60,38,22,.45);backdrop-filter:blur(3px);display:flex;align-items:flex-end;justify-content:center}
+#rsvp form{width:100%;max-width:540px;max-height:92%;overflow-y:auto;background:var(--cream);border-radius:26px 26px 0 0;padding:22px max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));box-sizing:border-box;box-shadow:0 -10px 40px rgba(60,38,22,.25)}
+#rsvp .script{font-size:44px;text-align:center}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.field>label,.field>span{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
+input,select,textarea{font:500 17px/1.35 var(--serif);color:var(--ink);background:#fffaf3;border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%;box-sizing:border-box}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+textarea{min-height:90px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fffaf3;cursor:pointer;font-size:16px}
+.chips input{width:auto;accent-color:var(--gold-2)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row .btn{flex:1}
+.note{margin-top:10px;font-size:15px;color:var(--ink-soft);min-height:1.2em;text-align:center}
+
+/* THANK YOU */
+.thanks{position:relative;text-align:center;padding-block:40px 120px;overflow:hidden}
+.thanks .bg{position:absolute;inset:auto 0 0;height:48%;background:url(horizon.jpg) center bottom/cover;opacity:.55;-webkit-mask-image:linear-gradient(180deg,transparent,#000 55%);mask-image:linear-gradient(180deg,transparent,#000 55%)}
+.thanks h2{display:flex;align-items:center;justify-content:center;gap:14px}
+.thanks h2::before,.thanks h2::after{content:"";height:1px;flex:0 1 70px;background:linear-gradient(90deg,transparent,var(--gold))}
+.thanks h2::after{transform:scaleX(-1)}
+.sign{font-family:var(--script);font-size:50px;margin-top:6px;position:relative;z-index:3}
+.sign::after{content:"";display:block;width:150px;height:1px;margin:2px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* animasi masuk */
+@media (prefers-reduced-motion:no-preference){
+  .hero-top>*{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+  .hero-top>*:nth-child(2){animation-delay:.15s}.hero-top>*:nth-child(3){animation-delay:.3s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}}
+  .rv{transition:opacity .9s ease,transform .9s ease}
+  .rv.pre{opacity:.2;transform:translateY(20px)}
+}
+
+/* ---------- Versi web (layar lebar) ---------- */
+.topnav,.facts,.details-photo,.bloom.deskonly{display:none}
+.details .lead{display:none}
+@media (min-width:900px){
+  body{background:var(--cream)}
+  .page{max-width:none;box-shadow:none}
+  .pad{padding-left:max(40px,calc((100% - 1120px)/2));padding-right:max(40px,calc((100% - 1120px)/2))}
+  #menuBtn{display:none}
+  #topBtn{right:max(24px,env(safe-area-inset-right,0px))}
+  h2.script{font-size:64px}
+
+  .topnav{position:absolute;z-index:20;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:calc(18px + env(safe-area-inset-top,0px)) max(40px,calc((100% - 1200px)/2)) 0}
+  .topnav .mono{text-decoration:none;font-size:40px}
+  .topnav .links{display:flex;gap:30px}
+  .topnav .links a{color:var(--ink);text-decoration:none;font-size:17px;font-weight:600;position:relative;padding:4px 0}
+  .topnav .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+  .topnav .links a:hover::after,.topnav .links a:focus-visible::after{transform:scaleX(1)}
+  .topnav .save{padding:8px 18px;font-size:15px}
+
+  .hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-rows:1fr auto;min-height:min(820px,94vh);background:url(sky.jpg) center 70%/cover;padding-left:max(40px,calc((100% - 1200px)/2))}
+  .hero::before{height:100%;background:linear-gradient(90deg,rgba(251,244,234,.92) 0%,rgba(251,244,234,.72) 38%,rgba(251,244,234,.15) 62%,rgba(251,244,234,0) 80%)}
+  .hero-photo{grid-column:2;grid-row:1/3;align-self:end;position:relative;z-index:2;height:min(760px,90vh)}
+  .hero-img{height:100%;width:100%;object-fit:cover;object-position:center 28%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+  .hero-photo .bloom{display:none}
+  .bloom.deskonly{display:block}
+  .hero-top{position:relative;grid-column:1;grid-row:1;align-self:end;padding-top:110px}
+  .hero-top .mono{display:none}
+  .hero-top .caps{font-size:15px;margin-top:0}
+  .names{font-size:clamp(84px,8.2vw,118px)}
+  .hero-bottom{grid-column:1;grid-row:2;margin-top:0;padding-top:12px;padding-bottom:110px;background:none}
+  .quote{font-size:24px}
+  .date span{font-size:20px}.date b{font-size:42px}
+  .hero .btn{font-size:17px;padding:12px 28px}
+  .wave{height:90px!important}
+
+  .story{padding-block:50px 60px}
+  .story-grid{grid-template-columns:minmax(0,330px) minmax(0,1fr) minmax(0,250px);gap:56px}
+  .story-grid h2,.story-grid p{text-align:left}
+  .story-grid .orn{justify-content:flex-start;margin-left:0!important}
+  .story-grid .orn::before{display:none}
+  .story p{font-size:19px;max-width:42ch}
+  .polaroid{padding:12px 12px 40px;margin:0}
+  .facts{display:grid;gap:26px;list-style:none;margin:0;padding:0 0 0 36px;border-left:1px solid var(--line)}
+  .facts li{display:flex;gap:16px;align-items:center;font-size:18px;line-height:1.3}
+  .facts svg{width:40px;height:40px;color:var(--gold);flex:none}
+  .facts b{font-weight:600}
+  .story .center{text-align:left;padding-left:calc(330px + 56px)}
+  .more{grid-template-columns:1fr 1fr;max-width:760px;margin:20px auto 18px}
+  .story .bloom{width:200px!important}
+
+  .details{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center;padding-block:40px 70px}
+  .details .lead{display:block;font-size:19px}
+  .details-photo{display:block;width:100%;height:440px;object-fit:cover;border-radius:220px 220px 24px 24px;box-shadow:0 0 0 8px #fffaf3,0 0 0 9px var(--line),0 24px 50px rgba(90,58,34,.22);position:relative;z-index:3}
+  .cols{max-width:600px;margin:8px auto 0}
+  .cols svg{width:40px;height:40px}
+  .cols h3{font-size:22px}.cols p{font-size:16.5px}
+  .details .bloom{width:220px!important}
+
+  .gallery{padding-block:40px 70px}
+  .carousel{max-width:1100px;margin:22px auto 0;padding:0 64px}
+  .track{grid-auto-columns:calc((100% - 36px)/4);gap:12px}
+  .track button{border-radius:16px}
+  .arrow{width:50px;height:50px}.arrow.prev{left:0}.arrow.next{right:0}
+
+  .rsvp{padding-block:80px;background:linear-gradient(90deg,rgba(60,38,22,.66),rgba(60,38,22,.3)),url(horizon.jpg) center 70%/cover}
+  .rsvp .bloom{display:none}
+  .pair{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:0;max-width:1000px;margin:0 auto;align-items:center}
+  .card{background:none;box-shadow:none;backdrop-filter:none;color:#fff7ec;text-align:left;padding:10px 48px}
+  .card+.card{border-left:1px solid rgba(255,240,220,.45)}
+  .card h3{font-size:40px}
+  .card p{font-size:18px;color:#f6e6d0;max-width:26ch}
+  .card .btn{width:auto;padding:12px 24px;font-size:16px;background:#fffaf3;color:var(--ink);border-color:transparent}
+  .count{max-width:520px}
+  .count b{font-size:56px}
+  .count span{color:#f3dfc4;font-size:16px;font-style:italic}
+  .count div+div{border-left-color:rgba(255,240,220,.35)}
+
+  .wishes{padding-block:70px 40px}
+  .list{grid-template-columns:1fr 1fr;max-width:920px;margin-left:auto;margin-right:auto;max-height:520px}
+  .thanks{padding-block:70px 170px}
+  .thanks .bg{height:70%}
+  .thanks .bloom{width:300px!important}
+  .sign{font-size:64px}
+}
+/* ---------- Sampul ---------- */
+html.locked,html.locked body{overflow:hidden}
+#cover{position:fixed;inset:0;z-index:60;overflow:hidden}
+.door{position:absolute;top:0;bottom:0;width:50.5%;overflow:hidden;transition:transform 1.3s cubic-bezier(.7,0,.25,1) .35s}
+.door.l{left:0}.door.r{right:0}
+.door-img{position:absolute;top:0;bottom:0;width:100vw;background:linear-gradient(180deg,rgba(251,244,234,.55) 0%,rgba(251,244,234,0) 34%,rgba(251,244,234,0) 50%,rgba(251,244,234,.9) 74%,var(--cream) 88%),url(hero.jpg) center 22%/cover}
+.door.l .door-img{left:0}.door.r .door-img{right:0}
+.cover-photo{display:none}
+.door.l{box-shadow:inset -1px 0 0 rgba(176,125,62,.25)}
+.cover-in{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;box-sizing:border-box;padding:calc(28px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(30px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));transition:opacity .45s ease,transform .45s ease}
+.cover-top .names{font-size:clamp(60px,17vw,104px)}
+.cover-bottom{max-width:380px}
+.cover-bottom .btn{font-size:17px;padding:12px 28px}
+#cover .bloom{z-index:2;transition:opacity .5s}
+#cover.opening .cover-in{opacity:0;transform:translateY(-12px)}
+#cover.opening .bloom{opacity:0}
+#cover.opening .door.l{transform:translateX(-101%)}
+#cover.opening .door.r{transform:translateX(101%)}
+@media (prefers-reduced-motion:no-preference){
+  .cover-top>*{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+  .cover-top>*:nth-child(2){animation-delay:.15s}.cover-top>*:nth-child(3){animation-delay:.3s}
+  .cover-bottom .btn{animation:pulse 2.4s ease-in-out 1.4s infinite}
+  @keyframes pulse{50%{box-shadow:0 6px 16px rgba(143,97,41,.3),0 0 0 8px rgba(176,125,62,.15)}}
+}
+@media (prefers-reduced-motion:reduce){.door,.cover-in{transition:none}}
+
+/* panah gulir di hero */
+.cue{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;color:var(--gold-2);border-radius:50%}
+.cue svg{width:26px;height:26px}
+.cue:focus-visible{outline:2px solid var(--gold-2)}
+@media (prefers-reduced-motion:no-preference){.cue svg{animation:bob 1.8s ease-in-out infinite}@keyframes bob{50%{transform:translateY(5px)}}}
+
+/* ---------- Menu bawah ---------- */
+.bnav{position:fixed;z-index:35;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translate(-50%,24px);opacity:0;transition:transform .5s ease,opacity .5s ease;display:flex;gap:2px;padding:6px;border-radius:999px;background:rgba(255,250,243,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 0 0 1px rgba(176,125,62,.25),0 10px 30px rgba(90,58,34,.2);max-width:calc(100% - 20px);box-sizing:border-box}
+.bnav.in{transform:translate(-50%,0);opacity:1}
+.bnav a{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 9px;border-radius:999px;color:var(--ink-soft);text-decoration:none;font:600 11.5px/1.1 var(--serif);letter-spacing:.02em;transition:background .25s,color .25s}
+.bnav svg{width:20px;height:20px}
+.bnav a.on{background:linear-gradient(180deg,#c2924f,var(--gold-2));color:#fffaf2}
+.bnav a:hover:not(.on){color:var(--ink);background:rgba(176,125,62,.1)}
+.bnav a:focus-visible{outline:2px solid var(--gold-2);outline-offset:1px}
+@media (max-width:360px){.bnav a{padding:7px 6px;font-size:10.5px}}
+@media (min-width:900px){
+  .bnav{gap:6px;padding:7px}
+  .bnav a{flex-direction:row;gap:8px;padding:10px 16px;font-size:15px}
+  .bnav svg{width:18px;height:18px}
+  .cover-top{margin-top:0}
+  .door-img{background:linear-gradient(90deg,rgba(251,244,234,.96) 0%,rgba(251,244,234,.82) 36%,rgba(251,244,234,.25) 54%,rgba(251,244,234,0) 66%),url(horizon.jpg) center 70%/cover}
+  .cover-photo{display:block;position:absolute;right:3%;top:0;height:100%;width:auto;max-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%,#000 82%,transparent),linear-gradient(0deg,transparent,#000 25%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 82%,transparent),linear-gradient(0deg,transparent,#000 25%);mask-composite:intersect}
+  .cover-in{width:52%;justify-content:center;gap:34px}
+}
+/* ---------- Semua bisa dipencet ---------- */
+a.date{color:inherit;text-decoration:none;border-radius:12px;transition:background .25s}
+a.date:hover{background:rgba(176,125,62,.08)}
+a.date:focus-visible,.tile:focus-visible,.facts a:focus-visible,.card.cd:focus-visible,.sign:focus-visible,.flinks a:focus-visible,.next:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+button.polaroid{border:0;cursor:zoom-in;display:block;width:auto;font:inherit;transition:transform .35s,box-shadow .35s}
+button.polaroid:hover{transform:rotate(-2deg) scale(1.02);box-shadow:0 18px 36px rgba(90,58,34,.3)}
+.cols .tile{color:inherit;text-decoration:none;border-radius:14px;padding-block:8px;transition:background .25s,transform .25s}
+.cols .tile:hover{background:rgba(176,125,62,.08);transform:translateY(-2px)}
+.hint{font-size:12.5px;color:var(--gold-2);font-weight:600;letter-spacing:.04em;margin-top:4px}
+.acts{margin-top:18px;position:relative;z-index:3;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+.acts>div{flex-basis:100%}
+.next{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--gold-2);font-weight:600;font-size:15.5px;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .25s,gap .25s}
+.next:hover{border-bottom-color:var(--gold-2);gap:10px}
+.next svg{width:15px;height:15px}
+.gallery .next{margin-top:18px}
+.facts a{display:flex;gap:16px;align-items:center;color:inherit;text-decoration:none;border-radius:12px;padding:4px 6px;margin:-4px -6px;transition:background .25s}
+.facts a:hover{background:rgba(176,125,62,.08)}
+button.details-photo{padding:0;border:0;cursor:zoom-in;overflow:hidden;background:none}
+button.details-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+button.details-photo:hover img{transform:scale(1.04)}
+.card.cd{display:block;color:inherit;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.card.cd:hover{transform:translateY(-2px)}
+.card .hint{display:block;margin-top:8px}
+.card .next{margin-top:10px;font-size:14px}
+button.stat{font:inherit;color:var(--ink);border:0;cursor:pointer;transition:background .25s,color .25s}
+button.stat.on{background:linear-gradient(180deg,#c2924f,var(--gold-2));color:#fffaf2;box-shadow:none}
+button.stat:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+.wish.flash{animation:flash 2s ease}
+@keyframes flash{0%,40%{box-shadow:0 0 0 2px var(--gold),0 8px 20px rgba(176,125,62,.25)}}
+.wish.mine{box-shadow:0 0 0 1px var(--gold)}
+a.sign{display:inline-block;color:var(--ink);text-decoration:none}
+.flinks{position:relative;z-index:3;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;max-width:420px;margin:18px auto 0}
+.flinks a{color:var(--ink);font-weight:600;font-size:15px;text-decoration:none;border-bottom:1px solid var(--line)}
+.flinks a:hover{color:var(--gold-2);border-bottom-color:var(--gold-2)}
+.thanks .next{position:relative;z-index:3}
+.lb-btn{position:absolute;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,250,243,.92);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lb-btn svg{width:22px;height:22px}
+.lb-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.lb-x{top:calc(14px + env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px))}
+.lb-prev{left:max(10px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb-next{right:max(10px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#f6e6d0;font-size:15px;letter-spacing:.1em}
+@media (min-width:900px){
+  .card.cd{color:#fff7ec}
+  .card .hint{color:#f3d9b0}
+  .card .next{color:#f3d9b0}
+  .card.cd:hover{transform:none;background:rgba(255,255,255,.06);border-radius:16px}
+  .story .center>div{display:inline-block;margin-left:22px}
+  .story .center .next{margin-top:0}
+}
+/* ---------- Hitung mundur: layar sendiri ---------- */
+.cdown{position:relative;z-index:1;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff8ee;overflow:hidden}
+.cd-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(52,32,18,.35) 0%,rgba(52,32,18,.62) 55%,rgba(52,32,18,.78) 100%),url(pantai.jpg) center 34%/cover}
+@media (prefers-reduced-motion:no-preference){.cd-bg{animation:slowzoom 24s ease-in-out infinite alternate}@keyframes slowzoom{to{transform:scale(1.08)}}}
+.cdown .wave{height:54px}
+.cdown .wave.top{top:-1px;bottom:auto}
+.cd-in{position:relative;z-index:2;padding-block:110px 120px;width:100%;box-sizing:border-box}
+.cd-eyebrow{color:#f3d9b0}
+.cd-title{color:#fffaf2;font-size:clamp(54px,15vw,96px);margin:6px 0 4px;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.cd-date{font-size:clamp(17px,4.6vw,22px);letter-spacing:.08em;color:#f6e6d0;font-style:italic}
+.cd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:420px;margin:30px auto 0}
+.cd-tile{background:rgba(255,248,236,.12);border:1px solid rgba(255,236,205,.4);border-radius:22px;padding:18px 6px 14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center}
+.cd-tile b{font-weight:500;font-size:clamp(58px,17vw,84px);line-height:1;font-variant-numeric:tabular-nums lining-nums;color:#fffaf2}
+.cd-tile span{margin-top:6px;font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:#f3d9b0}
+.cd-done{grid-column:1/-1;font-size:22px;font-style:italic}
+.cd-acts{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:30px}
+.cd-btn{background:#fffaf3;border-color:transparent;font-size:17px;padding:12px 26px}
+.cd-next{color:#f3d9b0}.cd-next:hover{border-bottom-color:#f3d9b0}
+@media (min-width:640px){
+  .cd-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:880px;gap:18px}
+  .cd-tile{padding:26px 8px 20px;border-radius:26px}
+  .cd-tile b{font-size:clamp(72px,9vw,120px)}
+}
+
+/* ---------- RSVP: layar sendiri ---------- */
+.rsvp2{padding-block:46px 40px;min-height:auto}
+.rsvp-head{text-align:center;position:relative;z-index:3}
+.rsvp-title{font-size:clamp(72px,22vw,110px)}
+.rsvp-sub{max-width:34ch;margin:0 auto;font-size:18px}
+.rsvp-wrap{position:relative;z-index:3;margin-top:24px;display:grid;gap:22px}
+.rsvp-photo{display:none}
+.rsvp-card{background:rgba(255,251,245,.92);border-radius:26px;padding:24px 20px;box-shadow:0 0 0 1px rgba(176,125,62,.22),0 18px 40px rgba(90,58,34,.14);backdrop-filter:blur(4px)}
+.rsvp-card .field>label,.rsvp-card .field>span{font-size:13px}
+.rsvp-card input,.rsvp-card select,.rsvp-card textarea{font-size:18px;padding:12px 14px}
+.rsvp-card .chips label{font-size:17px;padding:9px 16px}
+.rsvp-card .chips label:has(input:checked){background:rgba(176,125,62,.14);border-color:var(--gold)}
+.send{width:100%;font-size:18px;padding:14px 22px;margin-top:4px}
+.rsvp2 .center{position:relative;z-index:3;margin-top:8px}
+@media (min-width:900px){
+  .rsvp2{padding-block:70px 60px}
+  .rsvp-wrap{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center;max-width:1000px;margin:34px auto 0}
+  .rsvp-photo{display:block;padding:0;border:0;cursor:zoom-in;height:560px;border-radius:280px 280px 26px 26px;overflow:hidden;box-shadow:0 0 0 8px #fffaf3,0 0 0 9px var(--line),0 24px 50px rgba(90,58,34,.22)}
+  .rsvp-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;transition:transform .6s}
+  .rsvp-photo:hover img{transform:scale(1.04)}
+  .rsvp-card{padding:34px 34px 28px}
+}
+/* menu bawah: tombol responsif */
+.bnav{touch-action:manipulation}
+.bnav a{touch-action:manipulation;-webkit-tap-highlight-color:transparent;min-height:44px;box-sizing:border-box;justify-content:center;user-select:none;-webkit-user-select:none;transition:background .2s,color .2s,transform .15s}
+.bnav a:active{transform:scale(.92)}
+a,button{touch-action:manipulation}
+/* kembali ke sampul */
+#cover.back{transition:opacity .9s cubic-bezier(.4,0,.2,1),visibility 0s!important}
+.back-cover{position:fixed;z-index:55;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-16px);opacity:0;transition:transform .7s cubic-bezier(.22,.61,.36,1),opacity .7s;display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:8px 16px 8px 13px;border-radius:999px;border:0;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#3a3a34;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.02em;box-shadow:0 6px 20px rgba(0,0,0,.18);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.back-cover.in{transform:translate(-50%,0);opacity:1}
+.back-cover:active{transform:translate(-50%,0) scale(.94)}
+.back-cover svg{width:16px;height:16px}
+button.next{background:none;border:0;padding:0;cursor:pointer;font-family:inherit;}
+</style>
+
+<div id="cover" role="dialog" aria-modal="true" aria-label="Sampul undangan">
+  <div class="door l"><div class="door-img"><img class="cover-photo" src="hero.jpg" alt=""></div></div>
+  <div class="door r"><div class="door-img"><img class="cover-photo" src="hero.jpg" alt=""></div></div>
+  <div class="cover-in">
+    <div class="cover-top">
+      <div class="caps">The Wedding of</div>
+      <div class="names">Dewa<span class="amp">&amp;</span>Ayu</div>
+      <div class="date" style="margin:4px 0 0"><span>SAT</span><b>12</b><span>DEC 2026</span></div>
+    </div>
+    <div class="cover-bottom">
+      <div class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="guestName">Tamu Undangan</strong></div>
+      <p class="soft" style="margin:0 0 14px;font-size:15px">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di acara pernikahan kami.</p>
+      <button class="btn solid" type="button" id="openBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Open Invitation</button>
+    </div>
+  </div>
+  <svg class="bloom" data-seed="7" data-n="12" viewBox="0 0 200 240" style="width:min(38%,260px);left:-8%;bottom:-2%" aria-hidden="true"></svg>
+  <svg class="bloom flip" data-seed="21" data-n="11" viewBox="0 0 200 240" style="width:min(34%,240px);right:-8%;bottom:4%" aria-hidden="true"></svg>
+</div>
+
+<div class="page">
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <nav class="topnav" aria-label="Navigasi utama">
+    <a class="mono" href="#home">D&amp;A<svg viewBox="0 0 46 20" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 12c10-1 24-1 42-6"/><path d="M14 11c2-4 6-5 8-5M26 9c1-4 5-6 8-6M34 7c2-2 5-2 7-1" /><ellipse cx="22" cy="6" rx="3" ry="1.4" transform="rotate(-30 22 6)"/><ellipse cx="34" cy="3.5" rx="3" ry="1.4" transform="rotate(-20 34 3.5)"/></svg></a>
+    <a class="btn save" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T070000Z/20261212T140000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Save The Date</a>
+  </nav>
+  <div class="hero-photo"><img class="hero-img" src="hero.jpg" alt="Dewa dan Ayu saling menatap di tepi pantai saat matahari terbenam">
+    <svg class="bloom" data-seed="7" data-n="12" viewBox="0 0 200 240" style="width:30%;left:-10%;bottom:12%;z-index:4" aria-hidden="true"></svg>
+    <svg class="bloom flip" data-seed="21" data-n="11" viewBox="0 0 200 240" style="width:28%;right:-10%;bottom:16%;z-index:4" aria-hidden="true"></svg>
+  </div>
+  <div class="hero-top pad">
+    <div class="mono">D&amp;A<svg viewBox="0 0 46 20" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 12c10-1 24-1 42-6"/><path d="M14 11c2-4 6-5 8-5M26 9c1-4 5-6 8-6M34 7c2-2 5-2 7-1" /><ellipse cx="22" cy="6" rx="3" ry="1.4" transform="rotate(-30 22 6)"/><ellipse cx="34" cy="3.5" rx="3" ry="1.4" transform="rotate(-20 34 3.5)"/></svg></div>
+    <div class="caps">The Wedding of</div>
+    <h1 class="names">Dewa<span class="amp">&amp;</span>Ayu</h1>
+  </div>
+  <div class="hero-bottom pad">
+    <div class="quote">“Two hearts, one journey,<br>forever together.”</div>
+    <div class="orn"><svg viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="9" r="5.5"/><circle cx="14" cy="9" r="5.5"/></svg></div>
+    <a class="date" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T070000Z/20261212T140000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali&amp;details=Undangan+pernikahan+Dewa+%26+Ayu" target="_blank" rel="noopener" title="Simpan ke kalender"><span>SAT</span><b>12</b><span>DEC 2026</span></a>
+    <a class="cue" href="#story" aria-label="Gulir ke Our Story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m6 8 6 6 6-6"/><path d="m6 13 6 6 6-6" opacity=".5"/></svg></a>
+  </div>
+  <svg class="bloom deskonly" data-seed="9" data-n="14" viewBox="0 0 200 240" style="width:300px;left:-70px;bottom:10px" aria-hidden="true"></svg>
+  <svg class="wave" viewBox="0 0 540 70" preserveAspectRatio="none" style="bottom:-1px;height:54px" aria-hidden="true"><path d="M0 40C90 10 170 62 280 36S450 8 540 30V70H0z" fill="#fff" opacity=".55"/><path d="M0 52C110 26 200 70 320 46S470 30 540 44V70H0z" fill="#fbf4ea"/></svg>
+</header>
+
+<!-- OUR STORY -->
+<section class="story pad rv" id="story">
+  <svg class="bloom" data-seed="3" data-n="7" viewBox="0 0 200 240" style="width:30%;left:-9%;top:44%" aria-hidden="true"></svg>
+  <svg class="bloom flip" data-seed="12" data-n="6" viewBox="0 0 200 240" style="width:26%;right:-9%;top:30%" aria-hidden="true"></svg>
+  <div class="story-grid">
+    <button class="polaroid" type="button" data-photo="polaroid.jpg" aria-label="Perbesar foto"><img src="polaroid.jpg" alt="Dewa dan Ayu berdansa di tebing pantai"></button>
+    <div>
+      <h2 class="script">Our Story</h2>
+      <div class="orn" style="margin:2px auto 8px"><svg viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="9" r="5.5"/><circle cx="14" cy="9" r="5.5"/></svg></div>
+      <p>Dari tatap pertama hingga langkah ini, kami percaya cinta adalah tentang menemukan seseorang yang membuat hidup lebih bermakna.</p>
+      <p>Dan kini, kami siap memulai bab baru bersama, selamanya.</p>
+    </div>
+    <ul class="facts">
+      <li><a href="#gallery"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 30s-12-7.5-12-16a6.5 6.5 0 0 1 12-3.4A6.5 6.5 0 0 1 30 14c0 8.5-12 16-12 16z"/></svg><div>Dua hati<br><b>satu perjalanan</b></div></a></li>
+      <li><a href="#details"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="13" cy="21" r="9"/><circle cx="23" cy="21" r="9"/><path d="M10 8l3-4h10l3 4-8 5z"/></svg><div>Happy Wedding<br><b>12.12.2026</b></div></a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bali+Beach+Wedding+Venue+Bali" target="_blank" rel="noopener"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 33s-10-9-10-17a10 10 0 0 1 20 0c0 8-10 17-10 17z"/><circle cx="18" cy="16" r="4"/></svg><div>Pantai di Bali<br><b>saat senja</b></div></a></li>
+    </ul>
+  </div>
+  <div class="more" id="more" hidden>
+    <div class="who"><div class="script">Dewa</div><div>Nama Lengkap Mempelai Pria</div><div class="soft">Putra dari Bapak ··· &amp; Ibu ···</div></div>
+    <div class="who"><div class="script">Ayu</div><div>Nama Lengkap Mempelai Wanita</div><div class="soft">Putri dari Bapak ··· &amp; Ibu ···</div></div>
+  </div>
+  <div class="center" style="position:relative;z-index:3"><button class="btn" type="button" id="moreBtn" aria-expanded="false" aria-controls="more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <div><a class="next" href="#details">Lihat detail acara <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+</section>
+
+<!-- WEDDING DETAILS -->
+<section class="details pad rv" id="details">
+  <svg class="bloom" data-seed="31" data-n="7" viewBox="0 0 200 240" style="width:28%;left:-10%;bottom:-8%" aria-hidden="true"></svg>
+  <svg class="bloom flip" data-seed="44" data-n="7" viewBox="0 0 200 240" style="width:28%;right:-10%;bottom:-14%" aria-hidden="true"></svg>
+  <div class="details-main">
+  <h2 class="script">Wedding Details</h2>
+  <p class="lead soft">Kami mengundang Anda untuk hadir dan menjadi bagian dari hari bahagia kami.</p>
+  <div class="orn" style="margin:0 auto 10px"><svg viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="9" r="5.5"/><circle cx="14" cy="9" r="5.5"/></svg></div>
+  <div class="cols">
+    <a class="tile" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Upacara+Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T070000Z/20261212T090000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali&amp;details=Undangan+pernikahan+Dewa+%26+Ayu" target="_blank" rel="noopener" title="Simpan Upacara ke kalender">
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13" cy="21" r="9"/><circle cx="23" cy="21" r="9"/><path d="M10 8l3-4h10l3 4-8 5z"/></svg>
+      <h3>Upacara</h3>
+      <p>Sabtu, 12 Des 2026<br>15.00 WITA</p>
+      <span class="hint">+ Kalender</span>
+    </a>
+    <a class="tile" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T093000Z/20261212T140000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali&amp;details=Undangan+pernikahan+Dewa+%26+Ayu" target="_blank" rel="noopener" title="Simpan Resepsi ke kalender">
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 33s-10-9-10-17a10 10 0 0 1 20 0c0 8-10 17-10 17z"/><circle cx="18" cy="16" r="4"/></svg>
+      <h3>Resepsi</h3>
+      <p>Sabtu, 12 Des 2026<br>17.30 WITA</p>
+      <span class="hint">+ Kalender</span>
+    </a>
+    <a class="tile" href="https://www.google.com/maps/search/?api=1&amp;query=Bali+Beach+Wedding+Venue+Bali" target="_blank" rel="noopener" title="Buka peta">
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9l9-4 10 4 9-4v22l-9 4-10-4-9 4z"/><path d="M13 5v22M23 9v22"/></svg>
+      <h3>Lokasi</h3>
+      <p>Bali Beach Wedding Venue<br>Bali</p>
+      <span class="hint">Buka peta</span>
+    </a>
+  </div>
+  <div class="acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bali+Beach+Wedding+Venue+Bali" target="_blank" rel="noopener">View Location <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a>
+    <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T070000Z/20261212T140000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali&amp;details=Undangan+pernikahan+Dewa+%26+Ayu" target="_blank" rel="noopener">Save The Date <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+    <div><a class="next" href="#gallery">Lihat galeri foto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+  </div>
+  <button class="details-photo" type="button" data-photo="g1.jpg" aria-label="Perbesar foto"><img src="g1.jpg" alt="Ayu dengan veil dan hiasan bunga di rambut"></button>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery pad rv" id="gallery">
+  <h2 class="script">Our Gallery</h2>
+  <div class="soft" style="margin-top:2px">Momen bahagia kami dalam setiap langkah</div>
+  <div class="carousel">
+    <button class="arrow prev" type="button" aria-label="Foto sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 6-6 6 6 6"/></svg></button>
+    <div class="track" id="track">
+      <button type="button" data-src="g1.jpg"><img src="g1.jpg" alt="Ayu tertawa dengan veil dan hiasan bunga"></button>
+      <button type="button" data-src="g2.jpg"><img src="g2.jpg" alt="Dewa dan Ayu bergandengan di tepi pantai"></button>
+      <button type="button" data-src="g5.jpg"><img src="g5.jpg" alt="Dewa dan Ayu tertawa bersama"></button>
+      <button type="button" data-src="g4.jpg"><img src="g4.jpg" alt="Dewa tersenyum dengan latar laut"></button>
+      <button type="button" data-src="polaroid.jpg"><img src="polaroid.jpg" alt="Berdansa di tebing pantai"></button>
+    </div>
+    <button class="arrow next" type="button" aria-label="Foto berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button>
+  </div>
+  <div class="dots" id="dots"></div>
+  <a class="next" href="#countdown">Menuju hari bahagia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</section>
+
+<!-- HITUNG MUNDUR -->
+<section class="cdown" id="countdown">
+  <div class="cd-bg" aria-hidden="true"></div>
+  <svg class="wave top" viewBox="0 0 540 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H540V24C450 50 370 6 260 30S90 52 0 26z" fill="#fbf4ea"/></svg>
+  <div class="cd-in pad">
+    <div class="caps cd-eyebrow">Save the Date</div>
+    <h2 class="script cd-title">Menuju Hari Bahagia</h2>
+    <div class="cd-date">Sabtu, 12 Desember 2026 · Bali</div>
+    <div class="cd-grid" id="count" aria-live="off"></div>
+    <div class="cd-acts">
+      <a class="btn cd-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T070000Z/20261212T140000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali&amp;details=Undangan+pernikahan+Dewa+%26+Ayu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Simpan ke Kalender</a>
+      <a class="next cd-next" href="#rsvpSec">Konfirmasi kehadiran <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 540 70" preserveAspectRatio="none" style="bottom:-1px" aria-hidden="true"><path d="M0 40C90 10 170 62 280 36S450 8 540 30V70H0z" fill="#fff" opacity=".5"/><path d="M0 52C110 26 200 70 320 46S470 30 540 44V70H0z" fill="#fbf4ea"/></svg>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp2 pad rv" id="rsvpSec">
+  <svg class="bloom" data-seed="55" data-n="8" viewBox="0 0 200 240" style="width:30%;max-width:240px;left:-9%;bottom:-4%" aria-hidden="true"></svg>
+  <svg class="bloom flip" data-seed="58" data-n="7" viewBox="0 0 200 240" style="width:26%;max-width:220px;right:-9%;top:6%" aria-hidden="true"></svg>
+  <div class="rsvp-head">
+    <h2 class="script rsvp-title">RSVP</h2>
+    <div class="orn" style="margin:0 auto 6px"><svg viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="9" r="5.5"/><circle cx="14" cy="9" r="5.5"/></svg></div>
+    <p class="rsvp-sub">Konfirmasi kehadiran Anda sangat berarti bagi kami. Mohon isi sebelum <b>5 Desember 2026</b>.</p>
+  </div>
+  <div class="rsvp-wrap">
+    <button class="rsvp-photo" type="button" data-photo="g2.jpg" aria-label="Perbesar foto"><img src="g2.jpg" alt="Dewa dan Ayu bergandengan di tepi pantai"></button>
+    <form class="rsvp-card" id="form" novalidate>
+    <div class="field"><label for="fNama">Nama</label><input id="fNama" maxlength="60" autocomplete="name" placeholder="Nama Anda"></div>
+    <div class="field"><span>Kehadiran</span>
+      <div class="chips" role="radiogroup" aria-label="Kehadiran">
+        <label><input type="radio" id="fH1" name="hadir" value="hadir" checked> Hadir</label>
+        <label><input type="radio" id="fH2" name="hadir" value="tidak"> Berhalangan</label>
+        <label><input type="radio" id="fH3" name="hadir" value="ragu"> Masih ragu</label>
+      </div>
+    </div>
+    <div class="field"><label for="fJumlah">Jumlah tamu</label><select id="fJumlah"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+    <div class="field"><label for="fPesan">Ucapan &amp; doa</label><textarea id="fPesan" maxlength="500" placeholder="Tulis ucapan untuk Dewa &amp; Ayu"></textarea></div>
+    <button class="btn solid send" type="submit" id="sendBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 20 4l-6 16-3-7z"/><path d="m11 13 9-9"/></svg>Kirim Konfirmasi</button>
+    <div class="note" id="note" aria-live="polite"></div>
+    </form>
+  </div>
+  <div class="center"><a class="next" href="#wishes">Lihat ucapan para tamu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</section>
+
+<!-- WISHES -->
+<section class="wishes pad rv" id="wishes">
+  <h2 class="script">Ucapan &amp; Doa</h2>
+  <div class="stats" id="stats" hidden>
+    <button class="stat on" type="button" data-filter="all"><b id="sA">0</b>Semua</button>
+    <button class="stat" type="button" data-filter="hadir"><b id="sH">0</b>Hadir</button>
+    <button class="stat" type="button" data-filter="tidak"><b id="sT">0</b>Berhalangan</button>
+    <button class="stat" type="button" data-filter="ragu"><b id="sR">0</b>Masih ragu</button>
+  </div>
+  <div class="list" id="list"><div class="empty">Ucapan dari para tamu akan tampil di sini.</div></div>
+  <div style="margin-top:16px"><button class="btn" type="button" id="wishBtn">Tulis Ucapan</button></div>
+</section>
+
+<!-- THANK YOU -->
+<footer class="thanks pad">
+  <div class="bg" aria-hidden="true"></div>
+  <svg class="bloom" data-seed="77" data-n="14" viewBox="0 0 200 240" style="width:42%;left:-10%;bottom:-4%" aria-hidden="true"></svg>
+  <div style="position:relative;z-index:3">
+    <h2 class="script" style="font-size:clamp(50px,14vw,64px)">Terima Kasih</h2>
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#b07d3e" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+    <p style="margin:6px auto 0;max-width:30ch">Atas doa dan restu yang telah diberikan, kami merasa sangat berbahagia.</p>
+    <a class="sign" href="#home" title="Kembali ke atas">Dewa &amp; Ayu</a>
+    <div class="flinks">
+      <a href="#story">Our Story</a><a href="#details">Acara</a><a href="#gallery">Galeri</a><a href="#rsvpSec">RSVP</a><a href="#wishes">Ucapan</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Bali+Beach+Wedding+Venue+Bali" target="_blank" rel="noopener">Lokasi</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Pernikahan+Dewa+%26+Ayu&amp;dates=20261212T070000Z/20261212T140000Z&amp;location=Bali+Beach+Wedding+Venue,+Bali&amp;details=Undangan+pernikahan+Dewa+%26+Ayu" target="_blank" rel="noopener">Kalender</a>
+    </div>
+    <a class="next" href="#home">Kembali ke atas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    <div><button class="next" type="button" data-cover>Kembali ke sampul undangan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button></div>
+  </div>
+</footer>
+</div>
+
+
+
+<button class="back-cover" id="backCover" type="button" data-cover hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Sampul</button>
+<nav class="bnav" id="bnav" aria-label="Menu undangan" hidden>
+  <a href="#home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg><span>Home</span></a>
+  <a href="#story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Story</span></a>
+  <a href="#details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Acara</span></a>
+  <a href="#gallery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><span>Galeri</span></a>
+  <a href="#rsvpSec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H8l-4 4z"/><path d="m9 10 2 2 4-4"/></svg><span>RSVP</span></a>
+  <a href="#wishes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.6 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><span>Ucapan</span></a>
+</nav>
+
+<div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto">
+  <img alt="">
+  <button class="lb-btn lb-x" type="button" aria-label="Tutup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Foto sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 6-6 6 6 6"/></svg></button>
+  <button class="lb-btn lb-next" type="button" aria-label="Foto berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- Bunga putih (daisy, mawar, baby's breath) ---------- */
+  function rng(s){ return function(){ s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  var NS = "http://www.w3.org/2000/svg", uid = 0;
+  function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function grow(svg){
+    var r = rng(Number(svg.dataset.seed) || 1), n = Number(svg.dataset.n) || 7, leafy = svg.dataset.leafy, id = "f" + (uid++);
+    var defs = el("defs", {}, svg);
+    var pg = el("radialGradient", {id: id + "p", cx: ".5", cy: ".85", r: ".9"}, defs);
+    el("stop", {offset: "0", "stop-color": "#f1e2cc"}, pg); el("stop", {offset: ".55", "stop-color": "#fffdf8"}, pg);
+    var rg = el("radialGradient", {id: id + "r", cx: ".45", cy: ".4", r: ".7"}, defs);
+    el("stop", {offset: "0", "stop-color": "#f3e3c9"}, rg); el("stop", {offset: ".6", "stop-color": "#fffaf1"}, rg); el("stop", {offset: "1", "stop-color": "#ead6b8"}, rg);
+    var blur = el("filter", {id: id + "b"}, defs); el("feGaussianBlur", {stdDeviation: "1.4"}, blur);
+    var back = el("g", {"class": "sway b", filter: "url(#" + id + "b)", opacity: ".75"}, svg);
+    var front = el("g", {"class": "sway"}, svg);
+    var ox = 10, oy = 240;
+    function stem(g, x, y){
+      var cx = ox + (x - ox) * .3 + (r() - .5) * 30, cy = y + (oy - y) * .6;
+      el("path", {d: "M" + ox + " " + oy + "Q" + cx + " " + cy + " " + x + " " + y, stroke: "#9c9a72", "stroke-width": "1.3", fill: "none", opacity: ".8"}, g);
+      for (var i = 0; i < 2; i++){
+        var t = .35 + r() * .4, lx = (1-t)*(1-t)*ox + 2*(1-t)*t*cx + t*t*x, ly = (1-t)*(1-t)*oy + 2*(1-t)*t*cy + t*t*y, a = (r() - .5) * 120 - 30;
+        el("ellipse", {cx: lx + 6, cy: ly, rx: 7, ry: 2.8, fill: "#a7aa80", opacity: ".75", transform: "rotate(" + a + " " + lx + " " + ly + ")"}, g);
+      }
+    }
+    function daisy(g, x, y, s){
+      var rot = r() * 30, k = 13;
+      for (var i = 0; i < k; i++) el("ellipse", {cx: x, cy: y - s * .55, rx: s * .17, ry: s * .52, fill: "url(#" + id + "p)", stroke: "rgba(170,130,85,.28)", "stroke-width": ".6", transform: "rotate(" + (i * 360 / k + rot) + " " + x + " " + y + ")"}, g);
+      el("circle", {cx: x, cy: y, r: s * .24, fill: "#d9a646"}, g);
+      el("circle", {cx: x - s * .05, cy: y - s * .06, r: s * .11, fill: "#efc96d"}, g);
+    }
+    function rose(g, x, y, s){
+      el("circle", {cx: x, cy: y, r: s, fill: "url(#" + id + "r)", stroke: "rgba(170,130,85,.3)", "stroke-width": ".7"}, g);
+      for (var i = 0; i < 4; i++){
+        var rr = s * (.85 - i * .19);
+        el("path", {d: "M" + (x - rr) + " " + (y + rr * .2) + "A" + rr + " " + rr * .8 + " 0 0 1 " + (x + rr * .9) + " " + (y - rr * .1), fill: "none", stroke: "rgba(165,125,80,.4)", "stroke-width": ".8", transform: "rotate(" + (i * 70 + r() * 30) + " " + x + " " + y + ")"}, g);
+      }
+    }
+    function breath(g, x, y){
+      for (var i = 0; i < 7; i++){ var bx = x + (r() - .5) * 26, by = y + (r() - .5) * 22;
+        el("line", {x1: x, y1: y + 10, x2: bx, y2: by, stroke: "#b3ae88", "stroke-width": ".6"}, g);
+        el("circle", {cx: bx, cy: by, r: 1.8 + r() * 1.6, fill: "#fffdf8", stroke: "rgba(170,130,85,.3)", "stroke-width": ".5"}, g); }
+    }
+    for (var i = 0; i < n; i++){
+      var g = i < n * .35 ? back : front;
+      var ang = (-80 + (i / Math.max(1, n - 1)) * 75 + (r() - .5) * 14) * Math.PI / 180;
+      var len = 80 + r() * 130, x = ox + Math.cos(ang) * len * .9 + 20, y = oy + Math.sin(ang) * len;
+      stem(g, x, y);
+      var kind = leafy ? (r() < .6 ? 2 : 0) : r();
+      if (kind < .5) daisy(g, x, y, 17 + r() * 11);
+      else if (kind < .8) rose(g, x, y, 16 + r() * 9);
+      else breath(g, x, y);
+    }
+    if (!leafy) for (var j = 0; j < 3; j++) breath(front, 30 + r() * 120, 120 + r() * 90);
+  }
+  document.querySelectorAll("svg.bloom").forEach(grow);
+
+  /* ---------- Nama tamu: tambahkan #Nama-Tamu di akhir tautan ---------- */
+  var known = ["home","story","details","gallery","rsvpSec","wishes"];
+  var h = ""; try { h = decodeURIComponent((location.hash || "").slice(1)); } catch(e){}
+  if (h && known.indexOf(h) < 0){ $("guestName").textContent = h.replace(/[-_+]/g, " ").slice(0, 60); }
+
+  /* ---------- Navigasi ---------- */
+
+  /* ---------- Sampul: buka undangan ---------- */
+  var cover = $("cover"), bnav = $("bnav"), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("locked");
+  $("openBtn").focus({preventScroll: true});
+  var openTimer = null, backBtn = $("backCover");
+  function openInvite(){
+    clearTimeout(openTimer);
+    cover.classList.remove("back");
+    cover.classList.add("opening");
+    document.documentElement.classList.add("opened");
+    document.documentElement.classList.remove("locked");
+    scrollTo(0, 0);
+    openTimer = setTimeout(function(){ cover.hidden = true; bnav.hidden = false; backBtn.hidden = false; requestAnimationFrame(function(){ bnav.classList.add("in"); backBtn.classList.add("in"); }); }, reduce ? 0 : 1500);
+  }
+  function showCover(){
+    clearTimeout(openTimer);
+    bnav.classList.remove("in"); backBtn.classList.remove("in");
+    openTimer = setTimeout(function(){ bnav.hidden = true; backBtn.hidden = true; }, 450);
+    document.documentElement.classList.remove("opened");
+    cover.hidden = false; cover.classList.add("back");
+    void cover.offsetWidth;
+    cover.classList.remove("opening");
+    document.documentElement.classList.add("locked");
+    setTimeout(function(){ scrollTo(0, 0); $("openBtn").focus({preventScroll: true}); }, 700);
+  }
+  $("openBtn").addEventListener("click", openInvite);
+  document.querySelectorAll("[data-cover]").forEach(function(b){ b.addEventListener("click", function(e){ e.preventDefault(); showCover(); }); });
+
+  var NAV_IDS = ["home","story","details","gallery","countdown","rsvpSec","wishes"], NAV_MAP = {countdown: "rsvpSec"};
+
+  /* ---------- Menu bawah: respons cepat, tetap satu halaman ---------- */
+  var navLinks = bnav.querySelectorAll("a"), navLock = 0, navTimer = null, ticking = false;
+  function absTop(el){ var y = 0; while (el){ y += el.offsetTop; el = el.offsetParent; } return y; }
+  function setActive(id){
+    id = NAV_MAP[id] || id;
+    navLinks.forEach(function(a){ var on = a.getAttribute("href") === "#" + id; a.classList.toggle("on", on); if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+  }
+  function spyNow(){
+    if (navLock) return;
+    var y = pageYOffset, mid = y + innerHeight * .4, cur = NAV_IDS[0];
+    var atEnd = y + innerHeight >= document.documentElement.scrollHeight - 4;
+    NAV_IDS.forEach(function(id){ var el = $(id); if (!el) return; var top = absTop(el); if (top <= mid || (atEnd && top < y + innerHeight * .9)) cur = id; });
+    setActive(cur);
+  }
+  function go(sel){
+    var t = document.querySelector(sel); if (!t) return;
+    document.documentElement.classList.remove("locked");
+    t.classList.remove("pre");
+    var y = Math.max(0, absTop(t));
+    var far = Math.abs(y - pageYOffset) > innerHeight * 6;
+    navLock = 1; setActive(t.id);
+    window.scrollTo({top: y, behavior: (reduce || far) ? "instant" : "smooth"});
+    clearTimeout(navTimer); navTimer = setTimeout(function(){ navLock = 0; spyNow(); }, 1200);
+  }
+  addEventListener("scroll", function(){ if (!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; spyNow(); }); } }, {passive: true});
+  addEventListener("scrollend", function(){ if (navLock){ clearTimeout(navTimer); navLock = 0; spyNow(); } });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    if (a.hasAttribute("data-maps") || a.hasAttribute("data-cal")) return;
+    var sx = 0, sy = 0, fired = false;
+    function activate(){ go(a.getAttribute("href")); if (a.hasAttribute("data-write")) setTimeout(function(){ var f = $("fNama"); if (f && !f.disabled) f.focus({preventScroll: true}); }, 800); }
+    a.addEventListener("pointerdown", function(e){ sx = e.clientX; sy = e.clientY; fired = false; });
+    a.addEventListener("pointerup", function(e){
+      if (e.pointerType === "mouse") return;
+      if (Math.abs(e.clientX - sx) > 12 || Math.abs(e.clientY - sy) > 12) return;
+      fired = true; activate();
+    });
+    a.addEventListener("click", function(e){ e.preventDefault(); if (fired){ fired = false; return; } activate(); });
+  });
+
+  /* Read more */
+  $("moreBtn").addEventListener("click", function(){
+    var m = $("more"), open = m.hidden; m.hidden = !open; this.setAttribute("aria-expanded", String(open));
+    this.firstChild.nodeValue = open ? "Tutup " : "Read More ";
+  });
+
+  /* Muncul saat digulir */
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.remove("pre"); io.unobserve(e.target); } }); }, {threshold: .12});
+    document.querySelectorAll(".rv").forEach(function(s){ if (s.getBoundingClientRect().top > innerHeight){ s.classList.add("pre"); io.observe(s); } });
+  }
+
+  /* ---------- Galeri ---------- */
+  var track = $("track"), items = track.children, dots = $("dots");
+  function perView(){ return Math.max(1, Math.round(track.clientWidth / (items[0].getBoundingClientRect().width + 8))); }
+  function pages(){ return Math.max(1, items.length - perView() + 1); }
+  function buildDots(){
+    dots.innerHTML = "";
+    for (var i = 0; i < pages(); i++){ (function(i){ var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Ke foto " + (i + 1)); b.addEventListener("click", function(){ to(i); }); dots.appendChild(b); })(i); }
+    sync();
+  }
+  function idx(){ return Math.round(track.scrollLeft / (items[0].getBoundingClientRect().width + 8)); }
+  function to(i){ i = Math.max(0, Math.min(pages() - 1, i)); track.scrollTo({left: items[i].offsetLeft - track.offsetLeft - 2, behavior: "smooth"}); }
+  function sync(){ var k = idx(); Array.prototype.forEach.call(dots.children, function(d, i){ d.classList.toggle("on", i === k); }); }
+  document.querySelector(".arrow.prev").addEventListener("click", function(){ to(idx() - 1); });
+  document.querySelector(".arrow.next").addEventListener("click", function(){ to(idx() + 1 >= pages() ? 0 : idx() + 1); });
+  track.addEventListener("scroll", function(){ requestAnimationFrame(sync); }, {passive: true});
+  addEventListener("resize", buildDots); buildDots();
+  var lb = $("lightbox"), lbImg = lb.querySelector("img"), lbAt = 0, lastFocus = null;
+  var photos = Array.prototype.map.call(items, function(b){ return {src: b.dataset.src, alt: b.querySelector("img").alt}; });
+  function show(i){ lbAt = (i + photos.length) % photos.length; lbImg.src = photos[lbAt].src; lbImg.alt = photos[lbAt].alt; $("lbCount").textContent = (lbAt + 1) + " / " + photos.length; }
+  function openLb(i){ lastFocus = document.activeElement; show(i); lb.hidden = false; lb.querySelector(".lb-x").focus(); }
+  function closeLb(){ lb.hidden = true; if (lastFocus) lastFocus.focus(); }
+  Array.prototype.forEach.call(items, function(b, i){ b.addEventListener("click", function(){ openLb(i); }); });
+  document.querySelectorAll("[data-photo]").forEach(function(b){ b.addEventListener("click", function(){ var i = photos.findIndex(function(p){ return p.src === b.dataset.photo; }); if (i < 0){ photos.push({src: b.dataset.photo, alt: b.querySelector("img").alt}); i = photos.length - 1; } openLb(i); }); });
+  lb.querySelector(".lb-prev").addEventListener("click", function(e){ e.stopPropagation(); show(lbAt - 1); });
+  lb.querySelector(".lb-next").addEventListener("click", function(e){ e.stopPropagation(); show(lbAt + 1); });
+  lb.querySelector(".lb-x").addEventListener("click", closeLb);
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+  var tx = null;
+  lb.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive: true});
+  lb.addEventListener("touchend", function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) show(lbAt + (dx < 0 ? 1 : -1)); tx = null; });
+  document.addEventListener("keydown", function(e){ if (lb.hidden) return; if (e.key === "ArrowRight") show(lbAt + 1); if (e.key === "ArrowLeft") show(lbAt - 1); });
+
+  /* ---------- Hitung mundur ---------- */
+  var target = new Date("2026-12-12T15:00:00+08:00").getTime();
+  function pad(n){ return String(n).padStart(2, "0"); }
+  function tick(){
+    var d = Math.max(0, target - Date.now()), s = Math.floor(d / 1000);
+    if (d <= 0){ $("count").innerHTML = '<p class="cd-done">Hari bahagia telah tiba. Terima kasih atas doa dan restu Anda.</p>'; return false; }
+    var v = [Math.floor(s / 86400), pad(Math.floor(s % 86400 / 3600)), pad(Math.floor(s % 3600 / 60)), pad(s % 60)], L = ["Hari","Jam","Menit","Detik"], out = "";
+    for (var i = 0; i < 4; i++) out += '<div class="cd-tile"><b>' + v[i] + '</b><span>' + L[i] + '</span></div>';
+    $("count").innerHTML = out;
+    return true;
+  }
+  if (tick()) setInterval(tick, 1000);
+
+  /* ---------- RSVP & ucapan ---------- */
+  var form = $("form"), note = $("note"), send = $("sendBtn");
+  var db = null, me = null, writable = true, labels = {hadir: "Hadir", tidak: "Berhalangan", ragu: "Masih ragu"};
+  function openSheet(){ go("#rsvpSec"); setTimeout(function(){ if (!$("fNama").disabled) $("fNama").focus({preventScroll: true}); }, 700); }
+  $("wishBtn").addEventListener("click", openSheet);
+  document.querySelectorAll("[data-open=rsvp]").forEach(function(b){ b.addEventListener("click", function(e){ e.preventDefault(); openSheet(); }); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape"){ if (!lb.hidden) closeLb(); } });
+
+  function esc(s){ var d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; }
+  var allDocs = [], filter = "all";
+  document.querySelectorAll(".stat[data-filter]").forEach(function(b){
+    b.addEventListener("click", function(){ filter = b.dataset.filter; document.querySelectorAll(".stat[data-filter]").forEach(function(x){ x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", String(x === b)); }); render(allDocs); });
+  });
+  function render(docs){
+    allDocs = docs;
+    var H = 0, T = 0, R = 0, out = "";
+    docs.forEach(function(d){
+      var w = d.data() || {};
+      if (w.hadir === "hadir") H += Number(w.jumlah) || 1;
+      if (w.hadir === "tidak") T++;
+      if (w.hadir === "ragu") R++;
+      if (filter !== "all" && w.hadir !== filter) return;
+      var t = w.waktu ? new Date(w.waktu).toLocaleDateString("id-ID", {day: "numeric", month: "long", year: "numeric"}) : "";
+      out += '<div class="wish' + (d.id === me ? ' mine' : '') + '" id="w-' + esc(d.id) + '"><div class="n">' + esc(w.nama || "Tamu") + ' <span class="tag' + (w.hadir === "tidak" ? " no" : "") + '">' + esc(labels[w.hadir] || "") + '</span></div>' + (w.pesan ? '<p>' + esc(w.pesan) + '</p>' : '') + (t ? '<time>' + t + '</time>' : '') + '</div>';
+    });
+    $("list").innerHTML = out || (docs.length ? '<div class="empty">Belum ada tamu di kategori ini.</div>' : '<div class="empty">Belum ada ucapan. Jadilah yang pertama mengirim doa.</div>');
+    $("sA").textContent = docs.length; $("sH").textContent = H; $("sT").textContent = T; $("sR").textContent = R;
+    $("stats").hidden = !docs.length;
+  }
+  function readOnly(msg){ writable = false; Array.prototype.forEach.call(form.elements, function(x){ if (x.id !== "closeRsvp") x.disabled = true; }); note.textContent = msg; }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (!db || !me || !writable){ note.textContent = note.textContent || "Ucapan belum bisa dikirim dari tampilan ini."; return; }
+    var nama = $("fNama").value.trim();
+    if (!nama){ note.textContent = "Isi nama Anda terlebih dahulu."; $("fNama").focus(); return; }
+    var hadir = (form.querySelector('input[name="hadir"]:checked') || {}).value || "hadir";
+    send.disabled = true; note.textContent = "Mengirim…";
+    db.collection("ucapan").doc(me).set({nama: nama.slice(0, 60), hadir: hadir, jumlah: hadir === "hadir" ? Number($("fJumlah").value) : 0, pesan: $("fPesan").value.trim().slice(0, 500), waktu: Date.now()})
+      .then(function(){ send.disabled = false; send.lastChild.nodeValue = "Perbarui Konfirmasi"; note.textContent = "Terima kasih, konfirmasi Anda sudah tersimpan."; setTimeout(function(){ go("#wishes"); setTimeout(function(){ var m = document.querySelector(".wish.mine"); if (m){ m.scrollIntoView({block: "nearest", behavior: "smooth"}); m.classList.add("flash"); } }, 700); }, 1200); },
+            function(err){ send.disabled = false; if (err && err.code === "invalid_argument") readOnly("Tautan ini hanya untuk melihat. Minta pengantin memberi akses agar Anda bisa mengirim ucapan."); else note.textContent = "Belum terkirim. Periksa koneksi lalu coba lagi."; });
+  });
+
+  (async function(){
+    if (!window.claude || !claude.use){ readOnly("Formulir aktif saat undangan dibuka melalui tautan Claude."); return; }
+    var user = await claude.use("user");
+    db = await claude.use("db");
+    if (!db){ readOnly("Masuk ke akun Claude untuk mengirim ucapan."); $("list").innerHTML = '<div class="empty">Masuk ke akun Claude untuk membaca ucapan para tamu.</div>'; return; }
+    try { me = user ? await user.id() : null; } catch(e){ me = null; }
+    var can = null; try { can = user && user.can ? await user.can("data.write") : null; } catch(e){}
+    if (!me || can === false) readOnly("Tautan ini hanya untuk melihat. Minta pengantin memberi akses agar Anda bisa mengirim ucapan.");
+    var timer = setTimeout(function(){ $("list").innerHTML = '<div class="empty">Ucapan belum bisa dimuat. Coba buka ulang sebentar lagi.</div>'; }, 10000);
+    db.collection("ucapan").orderBy("waktu", "desc").limit(300).onSnapshot(function(snap){
+      if (!snap.metadata.fromCache) clearTimeout(timer);
+      render(snap.docs);
+      if (me && writable && !$("fNama").value){
+        var mine = snap.docs.filter(function(d){ return d.id === me; })[0];
+        if (mine){ var m = mine.data() || {}; $("fNama").value = m.nama || ""; $("fPesan").value = m.pesan || "";
+          var rb = form.querySelector('input[name="hadir"][value="' + m.hadir + '"]'); if (rb) rb.checked = true;
+          if (m.jumlah) $("fJumlah").value = String(m.jumlah); send.lastChild.nodeValue = "Perbarui Konfirmasi"; }
+      }
+    }, function(){ clearTimeout(timer); $("list").innerHTML = '<div class="empty">Ucapan tidak bisa dimuat saat ini.</div>'; });
+  })();
+})();
+</script>
+
+<a href="../../index.html#invitation" aria-label="Kembali ke portfolio Nubira" style="position:fixed;z-index:80;top:calc(12px + env(safe-area-inset-top,0px));left:max(12px,env(safe-area-inset-left,0px));display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:999px;background:rgba(10,24,56,.86);color:#fff;font:600 13px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.2);backdrop-filter:blur(8px)">&larr; Nubira</a><!--nb-guard--><style>body.nb-guard{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}body.nb-guard input,body.nb-guard textarea,body.nb-guard select,body.nb-guard [contenteditable]{-webkit-user-select:text;user-select:text}body.nb-guard img{-webkit-user-drag:none}</style><script>(function(){var d=document,ok=function(t){return t&&t.closest&&t.closest('input,textarea,select,[contenteditable]')};function on(){d.body&&d.body.classList.add('nb-guard')}d.body?on():d.addEventListener('DOMContentLoaded',on);d.addEventListener('contextmenu',function(e){if(!ok(e.target))e.preventDefault()});d.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault()});d.addEventListener('keydown',function(e){var k=(e.key||'').toLowerCase(),m=e.ctrlKey||e.metaKey;if(e.key==='F12'||(m&&(k==='u'||k==='s'||k==='p'))||(m&&e.shiftKey&&(k==='i'||k==='j'||k==='c'))){if(!ok(e.target)){e.preventDefault();e.stopPropagation()}}},true)})();</script>
+</body></html>
